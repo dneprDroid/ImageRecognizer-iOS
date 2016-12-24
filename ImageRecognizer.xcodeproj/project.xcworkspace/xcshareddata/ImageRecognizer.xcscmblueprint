@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "119B20775B728E494EFFCD876D4F2E9BA87AFFC6",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "DD2BEF1CD0B324A9179A036124354215B71DCC3E" : 0,
+    "119B20775B728E494EFFCD876D4F2E9BA87AFFC6" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "014D629C-7322-44B9-A2AB-AE45BE650697",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "DD2BEF1CD0B324A9179A036124354215B71DCC3E" : "WhatsThis-iOS\/",
+    "119B20775B728E494EFFCD876D4F2E9BA87AFFC6" : "ImageRecognizer-iOS\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "ImageRecognizer",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "ImageRecognizer.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/dneprDroid\/ImageRecognizer-iOS.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "119B20775B728E494EFFCD876D4F2E9BA87AFFC6"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/pppoe\/WhatsThis-iOS.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "DD2BEF1CD0B324A9179A036124354215B71DCC3E"
+    }
+  ]
+}
