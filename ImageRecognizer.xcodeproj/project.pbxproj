@@ -10,7 +10,6 @@
 		222A19FF1E0ED454000ED36D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222A19FE1E0ED454000ED36D /* AppDelegate.swift */; };
 		222A1A011E0ED454000ED36D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222A1A001E0ED454000ED36D /* ViewController.swift */; };
 		222A1A041E0ED454000ED36D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 222A1A021E0ED454000ED36D /* Main.storyboard */; };
-		222A1A071E0ED454000ED36D /* ImageRecognizer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 222A1A051E0ED454000ED36D /* ImageRecognizer.xcdatamodeld */; };
 		222A1A091E0ED454000ED36D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 222A1A081E0ED454000ED36D /* Assets.xcassets */; };
 		222A1A0C1E0ED454000ED36D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 222A1A0A1E0ED454000ED36D /* LaunchScreen.storyboard */; };
 		222A1A171E0ED454000ED36D /* ImageRecognizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222A1A161E0ED454000ED36D /* ImageRecognizerTests.swift */; };
@@ -43,7 +42,6 @@
 		222A19FE1E0ED454000ED36D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		222A1A001E0ED454000ED36D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		222A1A031E0ED454000ED36D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		222A1A061E0ED454000ED36D /* ImageRecognizer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ImageRecognizer.xcdatamodel; sourceTree = "<group>"; };
 		222A1A081E0ED454000ED36D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		222A1A0B1E0ED454000ED36D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		222A1A0D1E0ED454000ED36D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -53,11 +51,11 @@
 		222A1A1D1E0ED454000ED36D /* ImageRecognizerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageRecognizerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		222A1A211E0ED454000ED36D /* ImageRecognizerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRecognizerUITests.swift; sourceTree = "<group>"; };
 		222A1A231E0ED454000ED36D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		222A1A351E0ED4D0000ED36D /* c_predict_api.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = c_predict_api.h; path = "../../WhatsThis-iOS/WhatIsThis/MXNet/c_predict_api.h"; sourceTree = "<group>"; };
-		222A1A361E0ED4D0000ED36D /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = "../../WhatsThis-iOS/WhatIsThis/MXNet/LICENSE"; sourceTree = "<group>"; };
-		222A1A371E0ED4D0000ED36D /* mxnet_predict-all.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "mxnet_predict-all.cc"; path = "../../WhatsThis-iOS/WhatIsThis/MXNet/mxnet_predict-all.cc"; sourceTree = "<group>"; };
-		222A1A381E0ED4D0000ED36D /* MxnetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MxnetManager.h; path = "../../WhatsThis-iOS/WhatIsThis/MXNet/MxnetManager.h"; sourceTree = "<group>"; };
-		222A1A391E0ED4D0000ED36D /* MxnetManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MxnetManager.mm; path = "../../WhatsThis-iOS/WhatIsThis/MXNet/MxnetManager.mm"; sourceTree = "<group>"; };
+		222A1A351E0ED4D0000ED36D /* c_predict_api.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = c_predict_api.h; path = "../../../WhatsThis-iOS/WhatIsThis/MXNet/c_predict_api.h"; sourceTree = "<group>"; };
+		222A1A361E0ED4D0000ED36D /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = "../../../WhatsThis-iOS/WhatIsThis/MXNet/LICENSE"; sourceTree = "<group>"; };
+		222A1A371E0ED4D0000ED36D /* mxnet_predict-all.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "mxnet_predict-all.cc"; path = "../../../WhatsThis-iOS/WhatIsThis/MXNet/mxnet_predict-all.cc"; sourceTree = "<group>"; };
+		222A1A381E0ED4D0000ED36D /* MxnetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MxnetManager.h; path = "../../../WhatsThis-iOS/WhatIsThis/MXNet/MxnetManager.h"; sourceTree = "<group>"; };
+		222A1A391E0ED4D0000ED36D /* MxnetManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MxnetManager.mm; path = "../../../WhatsThis-iOS/WhatIsThis/MXNet/MxnetManager.mm"; sourceTree = "<group>"; };
 		222A1A3D1E0ED776000ED36D /* ImageRecognizer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ImageRecognizer-Bridging-Header.h"; sourceTree = "<group>"; };
 		222A1A3E1E0ED96B000ED36D /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -91,11 +89,11 @@
 		222A19F21E0ED454000ED36D = {
 			isa = PBXGroup;
 			children = (
-				222A1A3E1E0ED96B000ED36D /* Accelerate.framework */,
 				222A19FD1E0ED454000ED36D /* ImageRecognizer */,
 				222A1A151E0ED454000ED36D /* ImageRecognizerTests */,
 				222A1A201E0ED454000ED36D /* ImageRecognizerUITests */,
 				222A19FC1E0ED454000ED36D /* Products */,
+				222A1A3E1E0ED96B000ED36D /* Accelerate.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -114,13 +112,12 @@
 			children = (
 				222A1A331E0ED4B5000ED36D /* nn */,
 				222A19FE1E0ED454000ED36D /* AppDelegate.swift */,
-				222A1A001E0ED454000ED36D /* ViewController.swift */,
-				222A1A021E0ED454000ED36D /* Main.storyboard */,
 				222A1A081E0ED454000ED36D /* Assets.xcassets */,
-				222A1A0A1E0ED454000ED36D /* LaunchScreen.storyboard */,
-				222A1A0D1E0ED454000ED36D /* Info.plist */,
-				222A1A051E0ED454000ED36D /* ImageRecognizer.xcdatamodeld */,
 				222A1A3D1E0ED776000ED36D /* ImageRecognizer-Bridging-Header.h */,
+				222A1A0D1E0ED454000ED36D /* Info.plist */,
+				222A1A0A1E0ED454000ED36D /* LaunchScreen.storyboard */,
+				222A1A021E0ED454000ED36D /* Main.storyboard */,
+				222A1A001E0ED454000ED36D /* ViewController.swift */,
 			);
 			path = ImageRecognizer;
 			sourceTree = "<group>";
@@ -146,13 +143,13 @@
 		222A1A331E0ED4B5000ED36D /* nn */ = {
 			isa = PBXGroup;
 			children = (
-				222A1A351E0ED4D0000ED36D /* c_predict_api.h */,
 				222A1A361E0ED4D0000ED36D /* LICENSE */,
-				222A1A371E0ED4D0000ED36D /* mxnet_predict-all.cc */,
 				222A1A381E0ED4D0000ED36D /* MxnetManager.h */,
 				222A1A391E0ED4D0000ED36D /* MxnetManager.mm */,
+				222A1A351E0ED4D0000ED36D /* c_predict_api.h */,
+				222A1A371E0ED4D0000ED36D /* mxnet_predict-all.cc */,
 			);
-			name = nn;
+			path = nn;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,7 +288,6 @@
 				222A1A3B1E0ED4D0000ED36D /* mxnet_predict-all.cc in Sources */,
 				222A1A011E0ED454000ED36D /* ViewController.swift in Sources */,
 				222A19FF1E0ED454000ED36D /* AppDelegate.swift in Sources */,
-				222A1A071E0ED454000ED36D /* ImageRecognizer.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +329,7 @@
 				222A1A031E0ED454000ED36D /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		222A1A0A1E0ED454000ED36D /* LaunchScreen.storyboard */ = {
@@ -341,6 +338,7 @@
 				222A1A0B1E0ED454000ED36D /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -525,6 +523,7 @@
 				222A1A281E0ED454000ED36D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		222A1A291E0ED454000ED36D /* Build configuration list for PBXNativeTarget "ImageRecognizerTests" */ = {
 			isa = XCConfigurationList;
@@ -533,6 +532,7 @@
 				222A1A2B1E0ED454000ED36D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		222A1A2C1E0ED454000ED36D /* Build configuration list for PBXNativeTarget "ImageRecognizerUITests" */ = {
 			isa = XCConfigurationList;
@@ -541,21 +541,9 @@
 				222A1A2E1E0ED454000ED36D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		222A1A051E0ED454000ED36D /* ImageRecognizer.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				222A1A061E0ED454000ED36D /* ImageRecognizer.xcdatamodel */,
-			);
-			currentVersion = 222A1A061E0ED454000ED36D /* ImageRecognizer.xcdatamodel */;
-			path = ImageRecognizer.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 222A19F31E0ED454000ED36D /* Project object */;
 }
