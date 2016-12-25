@@ -7,8 +7,6 @@
 
 #import "MxnetManager.h"
 
-typedef void(^RecognitionCallback) (NSString *recognResult);
-
 @implementation MxnetManager
 
 + (id)shared {

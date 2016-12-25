@@ -14,10 +14,10 @@
 		222A1A0C1E0ED454000ED36D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 222A1A0A1E0ED454000ED36D /* LaunchScreen.storyboard */; };
 		222A1A171E0ED454000ED36D /* ImageRecognizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222A1A161E0ED454000ED36D /* ImageRecognizerTests.swift */; };
 		222A1A221E0ED454000ED36D /* ImageRecognizerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222A1A211E0ED454000ED36D /* ImageRecognizerUITests.swift */; };
-		222A1A3A1E0ED4D0000ED36D /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 222A1A361E0ED4D0000ED36D /* LICENSE */; };
-		222A1A3B1E0ED4D0000ED36D /* mxnet_predict-all.cc in Sources */ = {isa = PBXBuildFile; fileRef = 222A1A371E0ED4D0000ED36D /* mxnet_predict-all.cc */; };
-		222A1A3C1E0ED4D0000ED36D /* MxnetManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 222A1A391E0ED4D0000ED36D /* MxnetManager.mm */; };
 		222A1A3F1E0ED96B000ED36D /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 222A1A3E1E0ED96B000ED36D /* Accelerate.framework */; };
+		22EC3DEC1E1051BF00C01481 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 22EC3DE81E1051BF00C01481 /* LICENSE */; };
+		22EC3DED1E1051BF00C01481 /* mxnet_predict-all.cc in Sources */ = {isa = PBXBuildFile; fileRef = 22EC3DE91E1051BF00C01481 /* mxnet_predict-all.cc */; };
+		22EC3DEE1E1051BF00C01481 /* MxnetManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 22EC3DEB1E1051BF00C01481 /* MxnetManager.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,13 +51,13 @@
 		222A1A1D1E0ED454000ED36D /* ImageRecognizerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageRecognizerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		222A1A211E0ED454000ED36D /* ImageRecognizerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRecognizerUITests.swift; sourceTree = "<group>"; };
 		222A1A231E0ED454000ED36D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		222A1A351E0ED4D0000ED36D /* c_predict_api.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = c_predict_api.h; path = "../../../WhatsThis-iOS/WhatIsThis/MXNet/c_predict_api.h"; sourceTree = "<group>"; };
-		222A1A361E0ED4D0000ED36D /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = "../../../WhatsThis-iOS/WhatIsThis/MXNet/LICENSE"; sourceTree = "<group>"; };
-		222A1A371E0ED4D0000ED36D /* mxnet_predict-all.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "mxnet_predict-all.cc"; path = "../../../WhatsThis-iOS/WhatIsThis/MXNet/mxnet_predict-all.cc"; sourceTree = "<group>"; };
-		222A1A381E0ED4D0000ED36D /* MxnetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MxnetManager.h; path = "../../../WhatsThis-iOS/WhatIsThis/MXNet/MxnetManager.h"; sourceTree = "<group>"; };
-		222A1A391E0ED4D0000ED36D /* MxnetManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MxnetManager.mm; path = "../../../WhatsThis-iOS/WhatIsThis/MXNet/MxnetManager.mm"; sourceTree = "<group>"; };
 		222A1A3D1E0ED776000ED36D /* ImageRecognizer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ImageRecognizer-Bridging-Header.h"; sourceTree = "<group>"; };
 		222A1A3E1E0ED96B000ED36D /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		22EC3DE71E1051BF00C01481 /* c_predict_api.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = c_predict_api.h; sourceTree = "<group>"; };
+		22EC3DE81E1051BF00C01481 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		22EC3DE91E1051BF00C01481 /* mxnet_predict-all.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "mxnet_predict-all.cc"; sourceTree = "<group>"; };
+		22EC3DEA1E1051BF00C01481 /* MxnetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MxnetManager.h; sourceTree = "<group>"; };
+		22EC3DEB1E1051BF00C01481 /* MxnetManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MxnetManager.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,11 +143,11 @@
 		222A1A331E0ED4B5000ED36D /* nn */ = {
 			isa = PBXGroup;
 			children = (
-				222A1A361E0ED4D0000ED36D /* LICENSE */,
-				222A1A381E0ED4D0000ED36D /* MxnetManager.h */,
-				222A1A391E0ED4D0000ED36D /* MxnetManager.mm */,
-				222A1A351E0ED4D0000ED36D /* c_predict_api.h */,
-				222A1A371E0ED4D0000ED36D /* mxnet_predict-all.cc */,
+				22EC3DE81E1051BF00C01481 /* LICENSE */,
+				22EC3DEA1E1051BF00C01481 /* MxnetManager.h */,
+				22EC3DEB1E1051BF00C01481 /* MxnetManager.mm */,
+				22EC3DE71E1051BF00C01481 /* c_predict_api.h */,
+				22EC3DE91E1051BF00C01481 /* mxnet_predict-all.cc */,
 			);
 			path = nn;
 			sourceTree = "<group>";
@@ -258,7 +258,7 @@
 			files = (
 				222A1A0C1E0ED454000ED36D /* LaunchScreen.storyboard in Resources */,
 				222A1A091E0ED454000ED36D /* Assets.xcassets in Resources */,
-				222A1A3A1E0ED4D0000ED36D /* LICENSE in Resources */,
+				22EC3DEC1E1051BF00C01481 /* LICENSE in Resources */,
 				222A1A041E0ED454000ED36D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,10 +284,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				222A1A3C1E0ED4D0000ED36D /* MxnetManager.mm in Sources */,
-				222A1A3B1E0ED4D0000ED36D /* mxnet_predict-all.cc in Sources */,
 				222A1A011E0ED454000ED36D /* ViewController.swift in Sources */,
 				222A19FF1E0ED454000ED36D /* AppDelegate.swift in Sources */,
+				22EC3DEE1E1051BF00C01481 /* MxnetManager.mm in Sources */,
+				22EC3DED1E1051BF00C01481 /* mxnet_predict-all.cc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
