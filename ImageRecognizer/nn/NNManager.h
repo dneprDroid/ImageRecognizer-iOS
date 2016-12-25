@@ -14,7 +14,7 @@
 
 typedef void(^RecognitionCallback) (NSString *recognResult);
 
-@interface MxnetManager: NSObject {
+@interface NNManager: NSObject {
     
     PredictorHandle predictor;
     

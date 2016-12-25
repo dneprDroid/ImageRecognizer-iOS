@@ -5,12 +5,12 @@
 
 #import <vector>
 
-#import "MxnetManager.h"
+#import "NNManager.h"
 
-@implementation MxnetManager
+@implementation NNManager
 
 + (id)shared {
-    static MxnetManager *shared = nil;
+    static NNManager *shared = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         shared = [[self alloc] initMxnet];
@@ -20,8 +20,8 @@
 
 - (id)initMxnet {
     if (self = [super init]) {
-        if (!predictor) {
-
+            NSLog(@"creating mxnet instance.....");
+        
             NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"Inception_BN-symbol.json" ofType:nil];
             NSString *paramsPath = [[NSBundle mainBundle] pathForResource:@"Inception_BN-0039.params" ofType:nil];
             NSString *meanPath = [[NSBundle mainBundle] pathForResource:@"mean_224.bin" ofType:nil];
@@ -91,7 +91,6 @@
             CGDataProviderRelease(provider);
             //self.imageView.image = meanImage;
         }
-    }
     return self;
 }
 

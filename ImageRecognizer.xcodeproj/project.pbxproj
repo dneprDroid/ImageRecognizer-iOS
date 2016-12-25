@@ -17,7 +17,7 @@
 		222A1A3F1E0ED96B000ED36D /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 222A1A3E1E0ED96B000ED36D /* Accelerate.framework */; };
 		22EC3DEC1E1051BF00C01481 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 22EC3DE81E1051BF00C01481 /* LICENSE */; };
 		22EC3DED1E1051BF00C01481 /* mxnet_predict-all.cc in Sources */ = {isa = PBXBuildFile; fileRef = 22EC3DE91E1051BF00C01481 /* mxnet_predict-all.cc */; };
-		22EC3DEE1E1051BF00C01481 /* MxnetManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 22EC3DEB1E1051BF00C01481 /* MxnetManager.mm */; };
+		22EC3DEE1E1051BF00C01481 /* NNManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 22EC3DEB1E1051BF00C01481 /* NNManager.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +40,7 @@
 /* Begin PBXFileReference section */
 		222A19FB1E0ED454000ED36D /* ImageRecognizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageRecognizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		222A19FE1E0ED454000ED36D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		222A1A001E0ED454000ED36D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		222A1A001E0ED454000ED36D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		222A1A031E0ED454000ED36D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		222A1A081E0ED454000ED36D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		222A1A0B1E0ED454000ED36D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,8 +56,8 @@
 		22EC3DE71E1051BF00C01481 /* c_predict_api.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = c_predict_api.h; sourceTree = "<group>"; };
 		22EC3DE81E1051BF00C01481 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		22EC3DE91E1051BF00C01481 /* mxnet_predict-all.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "mxnet_predict-all.cc"; sourceTree = "<group>"; };
-		22EC3DEA1E1051BF00C01481 /* MxnetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MxnetManager.h; sourceTree = "<group>"; };
-		22EC3DEB1E1051BF00C01481 /* MxnetManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MxnetManager.mm; sourceTree = "<group>"; };
+		22EC3DEA1E1051BF00C01481 /* NNManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNManager.h; sourceTree = "<group>"; };
+		22EC3DEB1E1051BF00C01481 /* NNManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NNManager.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,8 +144,8 @@
 			isa = PBXGroup;
 			children = (
 				22EC3DE81E1051BF00C01481 /* LICENSE */,
-				22EC3DEA1E1051BF00C01481 /* MxnetManager.h */,
-				22EC3DEB1E1051BF00C01481 /* MxnetManager.mm */,
+				22EC3DEA1E1051BF00C01481 /* NNManager.h */,
+				22EC3DEB1E1051BF00C01481 /* NNManager.mm */,
 				22EC3DE71E1051BF00C01481 /* c_predict_api.h */,
 				22EC3DE91E1051BF00C01481 /* mxnet_predict-all.cc */,
 			);
@@ -294,7 +294,7 @@
 			files = (
 				222A1A011E0ED454000ED36D /* ViewController.swift in Sources */,
 				222A19FF1E0ED454000ED36D /* AppDelegate.swift in Sources */,
-				22EC3DEE1E1051BF00C01481 /* MxnetManager.mm in Sources */,
+				22EC3DEE1E1051BF00C01481 /* NNManager.mm in Sources */,
 				22EC3DED1E1051BF00C01481 /* mxnet_predict-all.cc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

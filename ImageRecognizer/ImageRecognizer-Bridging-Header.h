@@ -7,4 +7,4 @@
 //
 
 
-#import "MxnetManager.h"
+#import "NNManager.h"
