@@ -40,7 +40,7 @@
 /* Begin PBXFileReference section */
 		222A19FB1E0ED454000ED36D /* ImageRecognizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageRecognizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		222A19FE1E0ED454000ED36D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		222A1A001E0ED454000ED36D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		222A1A001E0ED454000ED36D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		222A1A031E0ED454000ED36D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		222A1A081E0ED454000ED36D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		222A1A0B1E0ED454000ED36D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -111,13 +111,13 @@
 			isa = PBXGroup;
 			children = (
 				222A1A331E0ED4B5000ED36D /* nn */,
+				22EC3DEF1E1052AC00C01481 /* ui */,
 				222A19FE1E0ED454000ED36D /* AppDelegate.swift */,
 				222A1A081E0ED454000ED36D /* Assets.xcassets */,
 				222A1A3D1E0ED776000ED36D /* ImageRecognizer-Bridging-Header.h */,
 				222A1A0D1E0ED454000ED36D /* Info.plist */,
 				222A1A0A1E0ED454000ED36D /* LaunchScreen.storyboard */,
 				222A1A021E0ED454000ED36D /* Main.storyboard */,
-				222A1A001E0ED454000ED36D /* ViewController.swift */,
 			);
 			path = ImageRecognizer;
 			sourceTree = "<group>";
@@ -150,6 +150,14 @@
 				22EC3DE91E1051BF00C01481 /* mxnet_predict-all.cc */,
 			);
 			path = nn;
+			sourceTree = "<group>";
+		};
+		22EC3DEF1E1052AC00C01481 /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				222A1A001E0ED454000ED36D /* ViewController.swift */,
+			);
+			path = ui;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
