@@ -31,10 +31,13 @@ class RecognButton: UIButton {
         self.layer.borderWidth = 1.0
         self.imageEdgeInsets = UIEdgeInsets(top: 15.0, left: 15.0, bottom: 15.0, right: 15.0)
         self.clipsToBounds = false
-
+        
+        self.userInteractionEnabled = true
     }
     
     func startAnimation() {
+        self.userInteractionEnabled = false
+
         UIView.animateKeyframesWithDuration(animationDuration,
                                             delay: 0,
                                             options: [.Repeat,  .Autoreverse],
@@ -52,6 +55,7 @@ class RecognButton: UIButton {
     }
     
     func stopAnimation() {
+        self.userInteractionEnabled = true
         self.layer.removeAllAnimations()
     }
 }

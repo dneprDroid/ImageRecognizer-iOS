@@ -19,5 +19,9 @@ class ViewController: UIViewController {
         sender.startAnimation()
         
     }
+    
+    @IBAction func onSelectFromGallery(sender: UIButton) {
+        
+    }
 }
 
