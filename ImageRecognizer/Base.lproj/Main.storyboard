@@ -32,7 +32,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pyb-k4-koh">
-                                        <rect key="frame" x="553" y="497" width="32" height="32"/>
+                                        <rect key="frame" x="518" y="485" width="32" height="30"/>
                                         <state key="normal" image="ic_file_image"/>
                                         <connections>
                                             <action selector="onSelectFromGallery:" destination="BYZ-38-t0r" eventType="touchDown" id="srU-9F-28F"/>
@@ -43,8 +43,10 @@
                                 <constraints>
                                     <constraint firstItem="zY8-uU-258" firstAttribute="centerX" secondItem="f4g-pl-ZJG" secondAttribute="centerX" id="8so-p6-PBo"/>
                                     <constraint firstAttribute="bottomMargin" secondItem="zY8-uU-258" secondAttribute="bottom" constant="10" id="LIh-Yr-f5H"/>
+                                    <constraint firstAttribute="bottom" secondItem="Pyb-k4-koh" secondAttribute="bottom" constant="10" id="Qqu-FX-2rh"/>
                                     <constraint firstAttribute="trailing" secondItem="Pyb-k4-koh" secondAttribute="trailing" constant="15" id="ThZ-3v-rJt"/>
-                                    <constraint firstAttribute="bottom" secondItem="Pyb-k4-koh" secondAttribute="bottom" constant="15" id="phO-fe-sle"/>
+                                    <constraint firstItem="Pyb-k4-koh" firstAttribute="height" secondItem="zY8-uU-258" secondAttribute="height" id="XEO-JQ-Ynk"/>
+                                    <constraint firstAttribute="bottom" secondItem="zY8-uU-258" secondAttribute="bottom" constant="10" id="dWb-hP-DsP"/>
                                 </constraints>
                             </view>
                         </subviews>
