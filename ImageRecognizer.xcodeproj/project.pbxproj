@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		222367301E117F1100B30DBE /* PaintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2223672F1E117F1100B30DBE /* PaintView.swift */; };
 		222A19FF1E0ED454000ED36D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222A19FE1E0ED454000ED36D /* AppDelegate.swift */; };
 		222A1A011E0ED454000ED36D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222A1A001E0ED454000ED36D /* ViewController.swift */; };
 		222A1A041E0ED454000ED36D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 222A1A021E0ED454000ED36D /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 		222A1A171E0ED454000ED36D /* ImageRecognizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222A1A161E0ED454000ED36D /* ImageRecognizerTests.swift */; };
 		222A1A221E0ED454000ED36D /* ImageRecognizerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222A1A211E0ED454000ED36D /* ImageRecognizerUITests.swift */; };
 		222A1A3F1E0ED96B000ED36D /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 222A1A3E1E0ED96B000ED36D /* Accelerate.framework */; };
+		226A73021E118D4500154899 /* UtilMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226A73011E118D4500154899 /* UtilMethods.swift */; };
 		22EC3DEC1E1051BF00C01481 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 22EC3DE81E1051BF00C01481 /* LICENSE */; };
 		22EC3DED1E1051BF00C01481 /* mxnet_predict-all.cc in Sources */ = {isa = PBXBuildFile; fileRef = 22EC3DE91E1051BF00C01481 /* mxnet_predict-all.cc */; };
 		22EC3DEE1E1051BF00C01481 /* NNManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 22EC3DEB1E1051BF00C01481 /* NNManager.mm */; };
@@ -38,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2223672F1E117F1100B30DBE /* PaintView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaintView.swift; sourceTree = "<group>"; };
 		222A19FB1E0ED454000ED36D /* ImageRecognizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageRecognizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		222A19FE1E0ED454000ED36D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		222A1A001E0ED454000ED36D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -53,6 +56,7 @@
 		222A1A231E0ED454000ED36D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		222A1A3D1E0ED776000ED36D /* ImageRecognizer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ImageRecognizer-Bridging-Header.h"; sourceTree = "<group>"; };
 		222A1A3E1E0ED96B000ED36D /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		226A73011E118D4500154899 /* UtilMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilMethods.swift; sourceTree = "<group>"; };
 		22EC3DE71E1051BF00C01481 /* c_predict_api.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = c_predict_api.h; sourceTree = "<group>"; };
 		22EC3DE81E1051BF00C01481 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		22EC3DE91E1051BF00C01481 /* mxnet_predict-all.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "mxnet_predict-all.cc"; sourceTree = "<group>"; };
@@ -110,6 +114,7 @@
 		222A19FD1E0ED454000ED36D /* ImageRecognizer */ = {
 			isa = PBXGroup;
 			children = (
+				226A73001E118D3300154899 /* util */,
 				222A1A331E0ED4B5000ED36D /* nn */,
 				22EC3DEF1E1052AC00C01481 /* ui */,
 				222A19FE1E0ED454000ED36D /* AppDelegate.swift */,
@@ -152,10 +157,19 @@
 			path = nn;
 			sourceTree = "<group>";
 		};
+		226A73001E118D3300154899 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				226A73011E118D4500154899 /* UtilMethods.swift */,
+			);
+			path = util;
+			sourceTree = "<group>";
+		};
 		22EC3DEF1E1052AC00C01481 /* ui */ = {
 			isa = PBXGroup;
 			children = (
 				222A1A001E0ED454000ED36D /* ViewController.swift */,
+				2223672F1E117F1100B30DBE /* PaintView.swift */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -292,7 +306,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				226A73021E118D4500154899 /* UtilMethods.swift in Sources */,
 				222A1A011E0ED454000ED36D /* ViewController.swift in Sources */,
+				222367301E117F1100B30DBE /* PaintView.swift in Sources */,
 				222A19FF1E0ED454000ED36D /* AppDelegate.swift in Sources */,
 				22EC3DEE1E1051BF00C01481 /* NNManager.mm in Sources */,
 				22EC3DED1E1051BF00C01481 /* mxnet_predict-all.cc in Sources */,

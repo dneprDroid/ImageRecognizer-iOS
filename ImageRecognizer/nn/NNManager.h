@@ -26,6 +26,6 @@ typedef void(^RecognitionCallback) (NSString *recognResult);
 }
 
 + (id) shared;
-- (void)predictImage:(UIImage *)image callback: (RecognitionCallback) callback;
+- (void) predictImage:(UIImage *)image callback: (RecognitionCallback) callback;
 
 @end
