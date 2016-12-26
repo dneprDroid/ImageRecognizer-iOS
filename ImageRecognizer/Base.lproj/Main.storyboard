@@ -59,6 +59,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cqV-Te-Sed"/>
+                    <connections>
+                        <outlet property="paintView" destination="f4g-pl-ZJG" id="Z9x-Fy-CXp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		220DA90A1E11C5C300998A9C /* Inception_BN-0039.params in Resources */ = {isa = PBXBuildFile; fileRef = 220DA9051E11C5C300998A9C /* Inception_BN-0039.params */; };
+		220DA90B1E11C5C300998A9C /* Inception_BN-symbol.json in Resources */ = {isa = PBXBuildFile; fileRef = 220DA9061E11C5C300998A9C /* Inception_BN-symbol.json */; };
+		220DA90C1E11C5C300998A9C /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 220DA9071E11C5C300998A9C /* LICENSE */; };
+		220DA90D1E11C5C300998A9C /* mean_224.bin in Resources */ = {isa = PBXBuildFile; fileRef = 220DA9081E11C5C300998A9C /* mean_224.bin */; };
+		220DA90E1E11C5C300998A9C /* synset.txt in Resources */ = {isa = PBXBuildFile; fileRef = 220DA9091E11C5C300998A9C /* synset.txt */; };
 		222367301E117F1100B30DBE /* PaintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2223672F1E117F1100B30DBE /* PaintView.swift */; };
 		222A19FF1E0ED454000ED36D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222A19FE1E0ED454000ED36D /* AppDelegate.swift */; };
 		222A1A011E0ED454000ED36D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222A1A001E0ED454000ED36D /* ViewController.swift */; };
@@ -41,7 +46,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2223672F1E117F1100B30DBE /* PaintView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaintView.swift; path = PaintView.swift; sourceTree = "<group>"; };
+		220DA9051E11C5C300998A9C /* Inception_BN-0039.params */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inception_BN-0039.params"; sourceTree = "<group>"; };
+		220DA9061E11C5C300998A9C /* Inception_BN-symbol.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Inception_BN-symbol.json"; sourceTree = "<group>"; };
+		220DA9071E11C5C300998A9C /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		220DA9081E11C5C300998A9C /* mean_224.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = mean_224.bin; sourceTree = "<group>"; };
+		220DA9091E11C5C300998A9C /* synset.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = synset.txt; sourceTree = "<group>"; };
+		2223672F1E117F1100B30DBE /* PaintView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaintView.swift; sourceTree = "<group>"; };
 		222A19FB1E0ED454000ED36D /* ImageRecognizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageRecognizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		222A19FE1E0ED454000ED36D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		222A1A001E0ED454000ED36D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +102,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		220DA9041E11C5B300998A9C /* nndata */ = {
+			isa = PBXGroup;
+			children = (
+				220DA9051E11C5C300998A9C /* Inception_BN-0039.params */,
+				220DA9061E11C5C300998A9C /* Inception_BN-symbol.json */,
+				220DA9071E11C5C300998A9C /* LICENSE */,
+				220DA9081E11C5C300998A9C /* mean_224.bin */,
+				220DA9091E11C5C300998A9C /* synset.txt */,
+			);
+			path = nndata;
+			sourceTree = "<group>";
+		};
 		222A19F21E0ED454000ED36D = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +138,7 @@
 		222A19FD1E0ED454000ED36D /* ImageRecognizer */ = {
 			isa = PBXGroup;
 			children = (
+				220DA9041E11C5B300998A9C /* nndata */,
 				222A1A331E0ED4B5000ED36D /* nn */,
 				22EC3DEF1E1052AC00C01481 /* ui */,
 				226A73001E118D3300154899 /* util */,
@@ -292,7 +315,12 @@
 				222A1A0C1E0ED454000ED36D /* LaunchScreen.storyboard in Resources */,
 				222A1A091E0ED454000ED36D /* Assets.xcassets in Resources */,
 				22EC3DEC1E1051BF00C01481 /* LICENSE in Resources */,
+				220DA90E1E11C5C300998A9C /* synset.txt in Resources */,
+				220DA90D1E11C5C300998A9C /* mean_224.bin in Resources */,
+				220DA90C1E11C5C300998A9C /* LICENSE in Resources */,
+				220DA90A1E11C5C300998A9C /* Inception_BN-0039.params in Resources */,
 				222A1A041E0ED454000ED36D /* Main.storyboard in Resources */,
+				220DA90B1E11C5C300998A9C /* Inception_BN-symbol.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

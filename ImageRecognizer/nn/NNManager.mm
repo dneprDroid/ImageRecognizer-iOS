@@ -151,10 +151,12 @@
         MXPredGetOutput(predictor, 0, outputs.data(), tt_size);
         size_t max_idx = std::distance(outputs.begin(), std::max_element(outputs.begin(), outputs.end()));
         NSString *result = [[model_synset objectAtIndex:max_idx] componentsJoinedByString:@" "];
-            
-        dispatch_async(dispatch_get_main_queue(), ^(){
-            callback(result);
-        });
+        
+        if(result != nil) {
+            dispatch_async(dispatch_get_main_queue(), ^(){
+                callback(result);
+            });
+        }
     });
 }
 
