@@ -17,6 +17,7 @@
 		222A1A221E0ED454000ED36D /* ImageRecognizerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222A1A211E0ED454000ED36D /* ImageRecognizerUITests.swift */; };
 		222A1A3F1E0ED96B000ED36D /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 222A1A3E1E0ED96B000ED36D /* Accelerate.framework */; };
 		226A73021E118D4500154899 /* UtilMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226A73011E118D4500154899 /* UtilMethods.swift */; };
+		226A73051E118E6100154899 /* RecognButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226A73041E118E6100154899 /* RecognButton.swift */; };
 		22EC3DEC1E1051BF00C01481 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 22EC3DE81E1051BF00C01481 /* LICENSE */; };
 		22EC3DED1E1051BF00C01481 /* mxnet_predict-all.cc in Sources */ = {isa = PBXBuildFile; fileRef = 22EC3DE91E1051BF00C01481 /* mxnet_predict-all.cc */; };
 		22EC3DEE1E1051BF00C01481 /* NNManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 22EC3DEB1E1051BF00C01481 /* NNManager.mm */; };
@@ -40,7 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2223672F1E117F1100B30DBE /* PaintView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaintView.swift; sourceTree = "<group>"; };
+		2223672F1E117F1100B30DBE /* PaintView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaintView.swift; path = ../PaintView.swift; sourceTree = "<group>"; };
 		222A19FB1E0ED454000ED36D /* ImageRecognizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageRecognizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		222A19FE1E0ED454000ED36D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		222A1A001E0ED454000ED36D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +58,7 @@
 		222A1A3D1E0ED776000ED36D /* ImageRecognizer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ImageRecognizer-Bridging-Header.h"; sourceTree = "<group>"; };
 		222A1A3E1E0ED96B000ED36D /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		226A73011E118D4500154899 /* UtilMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilMethods.swift; sourceTree = "<group>"; };
+		226A73041E118E6100154899 /* RecognButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecognButton.swift; sourceTree = "<group>"; };
 		22EC3DE71E1051BF00C01481 /* c_predict_api.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = c_predict_api.h; sourceTree = "<group>"; };
 		22EC3DE81E1051BF00C01481 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		22EC3DE91E1051BF00C01481 /* mxnet_predict-all.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "mxnet_predict-all.cc"; sourceTree = "<group>"; };
@@ -165,11 +167,20 @@
 			path = util;
 			sourceTree = "<group>";
 		};
+		226A73031E118E3900154899 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				2223672F1E117F1100B30DBE /* PaintView.swift */,
+				226A73041E118E6100154899 /* RecognButton.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
 		22EC3DEF1E1052AC00C01481 /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				226A73031E118E3900154899 /* views */,
 				222A1A001E0ED454000ED36D /* ViewController.swift */,
-				2223672F1E117F1100B30DBE /* PaintView.swift */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -309,6 +320,7 @@
 				226A73021E118D4500154899 /* UtilMethods.swift in Sources */,
 				222A1A011E0ED454000ED36D /* ViewController.swift in Sources */,
 				222367301E117F1100B30DBE /* PaintView.swift in Sources */,
+				226A73051E118E6100154899 /* RecognButton.swift in Sources */,
 				222A19FF1E0ED454000ED36D /* AppDelegate.swift in Sources */,
 				22EC3DEE1E1051BF00C01481 /* NNManager.mm in Sources */,
 				22EC3DED1E1051BF00C01481 /* mxnet_predict-all.cc in Sources */,

@@ -14,7 +14,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
     }
-
-
+    
+    @IBAction func onRecognTapped(sender: RecognButton) {
+        sender.startAnimation()
+        
+    }
 }
 

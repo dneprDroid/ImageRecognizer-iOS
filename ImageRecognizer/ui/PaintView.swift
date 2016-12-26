@@ -12,10 +12,10 @@ import UIKit
 
 class PaintView: UIImageView {
     
-    var lastPoint = CGPoint.zero
+    private var lastPoint = CGPoint.zero
     
     var brushWidth: CGFloat = 5.0
-    let brushColor: (red: CGFloat, green: CGFloat, blue: CGFloat)  = rgbValues(UIColor.blueColor())
+    var brushColor: (red: CGFloat, green: CGFloat, blue: CGFloat)  = rgbValues(UIColor.blueColor())
 
     var path: UIBezierPath  {
         let path  = UIBezierPath()
@@ -61,7 +61,7 @@ class PaintView: UIImageView {
        // self.image = nil
     }
     
-    func drawLineFrom(fromPoint: CGPoint, toPoint: CGPoint) {
+    private func drawLineFrom(fromPoint: CGPoint, toPoint: CGPoint) {
         
         UIGraphicsBeginImageContext(self.frame.size)
         let context = UIGraphicsGetCurrentContext()
