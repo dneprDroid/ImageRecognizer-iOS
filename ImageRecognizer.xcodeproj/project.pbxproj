@@ -41,7 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2223672F1E117F1100B30DBE /* PaintView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaintView.swift; path = ../PaintView.swift; sourceTree = "<group>"; };
+		2223672F1E117F1100B30DBE /* PaintView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaintView.swift; path = PaintView.swift; sourceTree = "<group>"; };
 		222A19FB1E0ED454000ED36D /* ImageRecognizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageRecognizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		222A19FE1E0ED454000ED36D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		222A1A001E0ED454000ED36D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -116,9 +116,9 @@
 		222A19FD1E0ED454000ED36D /* ImageRecognizer */ = {
 			isa = PBXGroup;
 			children = (
-				226A73001E118D3300154899 /* util */,
 				222A1A331E0ED4B5000ED36D /* nn */,
 				22EC3DEF1E1052AC00C01481 /* ui */,
+				226A73001E118D3300154899 /* util */,
 				222A19FE1E0ED454000ED36D /* AppDelegate.swift */,
 				222A1A081E0ED454000ED36D /* Assets.xcassets */,
 				222A1A3D1E0ED776000ED36D /* ImageRecognizer-Bridging-Header.h */,
