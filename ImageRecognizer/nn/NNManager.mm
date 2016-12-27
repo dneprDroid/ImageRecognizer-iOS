@@ -150,12 +150,15 @@
         std::vector<float> outputs(tt_size);
         MXPredGetOutput(predictor, 0, outputs.data(), tt_size);
         size_t max_idx = std::distance(outputs.begin(), std::max_element(outputs.begin(), outputs.end()));
-        NSString *result = [[model_synset objectAtIndex:max_idx] componentsJoinedByString:@" "];
+        NSArray *result = [model_synset objectAtIndex:max_idx];
         
         if(result != nil) {
-            dispatch_async(dispatch_get_main_queue(), ^(){
-                callback(result);
-            });
+            NSString * description = [result componentsJoinedByString:@" "];
+            if (description!= nil) {
+                dispatch_async(dispatch_get_main_queue(), ^(){
+                    callback(description);
+                });
+            }
         }
     });
 }

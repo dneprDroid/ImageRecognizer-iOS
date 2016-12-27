@@ -56,7 +56,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction func onSelectFromGallery(sender: UIButton) {
-        
         presentViewController(picker, animated: true, completion: nil)
     }
     
