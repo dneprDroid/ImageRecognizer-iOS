@@ -72,7 +72,7 @@
 		226A73011E118D4500154899 /* UtilMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilMethods.swift; sourceTree = "<group>"; };
 		226A73041E118E6100154899 /* RecognButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecognButton.swift; sourceTree = "<group>"; };
 		2270BFAE1E12B74700F8438A /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
-		22EACAD41E12807C005C6EA3 /* AlertToastView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertToastView.swift; path = ../../util/AlertToastView.swift; sourceTree = "<group>"; };
+		22EACAD41E12807C005C6EA3 /* AlertToastView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertToastView.swift; path = AlertToastView.swift; sourceTree = "<group>"; };
 		22EC3DE71E1051BF00C01481 /* c_predict_api.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = c_predict_api.h; sourceTree = "<group>"; };
 		22EC3DE81E1051BF00C01481 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		22EC3DE91E1051BF00C01481 /* mxnet_predict-all.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "mxnet_predict-all.cc"; sourceTree = "<group>"; };
@@ -143,8 +143,8 @@
 			isa = PBXGroup;
 			children = (
 				2270BFAD1E12B73C00F8438A /* extension */,
-				220DA9041E11C5B300998A9C /* nndata */,
 				222A1A331E0ED4B5000ED36D /* nn */,
+				220DA9041E11C5B300998A9C /* nndata */,
 				22EC3DEF1E1052AC00C01481 /* ui */,
 				226A73001E118D3300154899 /* util */,
 				222A19FE1E0ED454000ED36D /* AppDelegate.swift */,
