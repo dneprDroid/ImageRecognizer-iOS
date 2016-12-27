@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupToolbar()
+        
         picker = UIImagePickerController()
         picker.delegate = self
         
@@ -53,6 +55,19 @@ class ViewController: UIViewController {
     @IBAction func onSelectFromGallery(sender: UIButton) {
         
         presentViewController(picker, animated: true, completion: nil)
+    }
+    
+    private func setupToolbar() {
+        self.navigationController?.navigationBar.barStyle = .Black
+        self.navigationItem.title = "ImageRecognizer"
+        
+        let titleShadow = NSShadow()
+        titleShadow.shadowColor =  UIColor.blackColor()
+        titleShadow.shadowOffset = CGSize(width: 0, height: 1.5)
+
+        self.navigationController?.navigationBar.titleTextAttributes = [
+            NSShadowAttributeName:  titleShadow,
+            NSFontAttributeName:    UIFont(name: "HelveticaNeue-CondensedBlack", size: 17.0)!]
     }
 }
 
