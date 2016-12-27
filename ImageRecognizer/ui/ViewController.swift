@@ -45,8 +45,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            paintView.contentMode = .ScaleAspectFit
-            paintView.image = pickedImage
+            paintView.setPhoto(pickedImage)
             self.photoImage = pickedImage
         }
         

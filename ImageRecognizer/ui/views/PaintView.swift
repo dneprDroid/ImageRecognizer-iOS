@@ -16,6 +16,7 @@ class PaintView: UIImageView {
     
     var brushWidth: CGFloat = 5.0
     var brushColor: (red: CGFloat, green: CGFloat, blue: CGFloat)  = rgbValues(UIColor.blueColor())
+    private var paintMode: PaintMode = .Drawing
 
     var path: UIBezierPath  {
         let path  = UIBezierPath()
@@ -26,21 +27,43 @@ class PaintView: UIImageView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+        viewInit()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        viewInit()
+    }
+    
+    func viewInit() {
+        self.contentMode = .ScaleAspectFit
+
+        let gradient = CAGradientLayer()
+        let gradientHeight = self.frame.height / 5
+        
+        let gradientFrame = CGRect(x: 0, y: self.frame.height - gradientHeight, width: self.frame.width, height: gradientHeight)
+
+        let blackColor = UIColor(white: 0.1, alpha: 0.5).CGColor
+        gradient.frame = self.layer.convertRect(gradientFrame, toLayer: gradient)
+
+        gradient.colors = [UIColor.clearColor().CGColor, blackColor]
+        self.layer.insertSublayer(gradient, atIndex: 0)
     }
     
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        if paintModeIsPhoto() {
+            return
+        }
         if let touch = touches.first {
             lastPoint = touch.locationInView(self)
         }
     }
     
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        if paintModeIsPhoto() {
+            return
+        }
         if let touch = touches.first {
             let currentPoint = touch.locationInView(self)
             drawLineFrom(lastPoint, toPoint: currentPoint)
@@ -49,8 +72,31 @@ class PaintView: UIImageView {
         }
     }
     
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    func setPhoto(photo: UIImage) {
+        setPaintMode(.Photo)
+        self.image = photo
+    }
     
+    func setPaintMode(mode: PaintMode) {
+        self.paintMode = mode
+    }
+    
+    func paintModeIsDrawing() -> Bool {
+        return paintMode == .Drawing
+    }
+    
+    func paintModeIsPhoto() -> Bool {
+        return paintMode == .Photo
+    }
+    
+    func clear() {
+        self.image = nil
+    }
+    
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        if paintModeIsPhoto() {
+            return
+        }
 
         UIGraphicsBeginImageContext(self.frame.size)
         self.image?.drawInRect(CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height), blendMode: .Normal, alpha: 1.0)
@@ -83,4 +129,9 @@ class PaintView: UIImageView {
         UIGraphicsEndImageContext()
     }
     
+}
+
+enum PaintMode {
+    case Drawing
+    case Photo
 }
