@@ -28,7 +28,9 @@ class ViewController: UIViewController {
     
     @IBAction func onRecognTapped(sender: RecognButton) {
         if paintView.paintModeIsDrawing() {
-            self.photoImage = paintView.getBackground()
+            if let image = paintView.getBackground() {
+                self.photoImage = image
+            }
         }
         
         if let image = photoImage {
@@ -38,6 +40,7 @@ class ViewController: UIViewController {
             NNManager.shared().predictImage(image, callback: { description in
                 print("image: \(description)")
                 sender.stopAnimation()
+                AlertToastView.show(self.view, text: description)
             })
         }
         

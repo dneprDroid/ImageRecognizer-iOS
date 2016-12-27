@@ -93,8 +93,8 @@ class PaintView: UIImageView {
         self.image = nil
     }
     
-    func getBackground() -> UIImage {
-        return self.image!
+    func getBackground() -> UIImage? {
+        return self.image
     }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
