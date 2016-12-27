@@ -24,11 +24,11 @@ class RecognButton: UIButton {
     }
     
     private func btnSetup() {
-        self.backgroundColor = UIColor.blueColor()
+        self.backgroundColor = UIColor.blueLight()
         self.tintColor = UIColor.whiteColor()
         
         self.layer.borderColor = UIColor.whiteColor().CGColor
-        self.layer.borderWidth = 1.0
+        self.layer.borderWidth = 0.8
         self.imageEdgeInsets = UIEdgeInsets(top: 15.0, left: 15.0, bottom: 15.0, right: 15.0)
         self.clipsToBounds = false
         
@@ -36,8 +36,9 @@ class RecognButton: UIButton {
     }
     
     func startAnimation() {
-        self.userInteractionEnabled = false
+        self.setTitle("Recognition...", forState: .Normal)
 
+        self.userInteractionEnabled = false
         UIView.animateKeyframesWithDuration(animationDuration,
                                             delay: 0,
                                             options: [.Repeat,  .Autoreverse],
@@ -48,13 +49,15 @@ class RecognButton: UIButton {
             })
             
             UIView.addKeyframeWithRelativeStartTime(self.animationDuration / 2, relativeDuration: self.animationDuration / 2, animations: {
-                self.backgroundColor = UIColor.blueColor()
+                self.backgroundColor = UIColor.blueLight()
             })
             
             }, completion: nil)
     }
     
     func stopAnimation() {
+        self.setTitle("What is", forState: .Normal)
+        
         self.userInteractionEnabled = true
         self.layer.removeAllAnimations()
     }

@@ -10,20 +10,6 @@ import Foundation
 import UIKit
 
 
-
-func rgbValues(color: UIColor) -> (red: CGFloat, green: CGFloat, blue: CGFloat) {
-    var fRed : CGFloat = 0
-    var fGreen : CGFloat = 0
-    var fBlue : CGFloat = 0
-    var fAlpha: CGFloat = 0
-    if color.getRed(&fRed, green: &fGreen, blue: &fBlue, alpha: &fAlpha) {
-        
-        return (fRed, fGreen, fBlue)
-    } else {
-        return (0, 0, 0)
-    }
-}
-
 //debug
 func saveImageToGallery(image: UIImage) {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),{

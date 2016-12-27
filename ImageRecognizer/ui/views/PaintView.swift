@@ -15,7 +15,7 @@ class PaintView: UIImageView {
     private var lastPoint = CGPoint.zero
     
     var brushWidth: CGFloat = 5.0
-    var brushColor: (red: CGFloat, green: CGFloat, blue: CGFloat)  = rgbValues(UIColor.blueColor())
+    var brushColor: (red: CGFloat, green: CGFloat, blue: CGFloat)  = UIColor.blueLight().rgbValues()
     private var paintMode: PaintMode = .Drawing
 
     var path: UIBezierPath  {
