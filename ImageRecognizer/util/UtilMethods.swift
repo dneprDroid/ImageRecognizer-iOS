@@ -23,3 +23,10 @@ func rgbValues(color: UIColor) -> (red: CGFloat, green: CGFloat, blue: CGFloat) 
         return (0, 0, 0)
     }
 }
+
+//debug
+func saveImageToGallery(image: UIImage) {
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),{
+        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
+    })
+}

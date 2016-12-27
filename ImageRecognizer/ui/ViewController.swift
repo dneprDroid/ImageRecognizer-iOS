@@ -25,14 +25,29 @@ class ViewController: UIViewController {
     }
     
     @IBAction func onRecognTapped(sender: RecognButton) {
-        sender.startAnimation()
+        if paintView.paintModeIsDrawing() {
+            self.photoImage = paintView.getBackground()
+        }
+        
         if let image = photoImage {
+            sender.startAnimation()
+            saveImageToGallery(image)
+
             NNManager.shared().predictImage(image, callback: { description in
                 print("image: \(description)")
                 sender.stopAnimation()
             })
         }
         
+    }
+    
+    @IBAction func clear(sender: UIButton) {
+        self.paintView.clear()
+    }
+    
+    @IBAction func paintModeEnabled(sender: UIButton) {
+        self.paintView.clear()
+        self.paintView.setPaintMode(.Drawing)
     }
     
     @IBAction func onSelectFromGallery(sender: UIButton) {

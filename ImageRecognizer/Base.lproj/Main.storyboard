@@ -21,6 +21,13 @@
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f4g-pl-ZJG" customClass="PaintView" customModule="ImageRecognizer" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pyb-k4-koh">
+                                        <rect key="frame" x="518" y="485" width="32" height="30"/>
+                                        <state key="normal" image="ic_file_image"/>
+                                        <connections>
+                                            <action selector="onSelectFromGallery:" destination="BYZ-38-t0r" eventType="touchDown" id="srU-9F-28F"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zY8-uU-258" customClass="RecognButton" customModule="ImageRecognizer" customModuleProvider="target">
                                         <rect key="frame" x="261" y="485" width="78" height="30"/>
                                         <constraints>
@@ -31,22 +38,33 @@
                                             <action selector="onRecognTapped:" destination="BYZ-38-t0r" eventType="touchDown" id="2Sb-Sf-TrO"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pyb-k4-koh">
-                                        <rect key="frame" x="518" y="485" width="32" height="30"/>
-                                        <state key="normal" image="ic_file_image"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tvt-Un-DjU">
+                                        <rect key="frame" x="-9" y="484" width="81" height="32"/>
+                                        <state key="normal" image="ic_lead_pencil"/>
                                         <connections>
-                                            <action selector="onSelectFromGallery:" destination="BYZ-38-t0r" eventType="touchDown" id="srU-9F-28F"/>
+                                            <action selector="paintModeEnabled:" destination="BYZ-38-t0r" eventType="touchDown" id="gTF-R7-VBk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DQe-Ph-ljB">
+                                        <rect key="frame" x="63" y="484" width="75" height="32"/>
+                                        <state key="normal" image="ic_eraser_variant"/>
+                                        <connections>
+                                            <action selector="clear:" destination="BYZ-38-t0r" eventType="touchDown" id="uum-wn-5lO"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="Tvt-Un-DjU" firstAttribute="leading" secondItem="f4g-pl-ZJG" secondAttribute="leadingMargin" constant="10" id="3RJ-Cg-FN3"/>
                                     <constraint firstItem="zY8-uU-258" firstAttribute="centerX" secondItem="f4g-pl-ZJG" secondAttribute="centerX" id="8so-p6-PBo"/>
                                     <constraint firstAttribute="bottomMargin" secondItem="zY8-uU-258" secondAttribute="bottom" constant="10" id="LIh-Yr-f5H"/>
                                     <constraint firstAttribute="bottom" secondItem="Pyb-k4-koh" secondAttribute="bottom" constant="10" id="Qqu-FX-2rh"/>
                                     <constraint firstAttribute="trailing" secondItem="Pyb-k4-koh" secondAttribute="trailing" constant="15" id="ThZ-3v-rJt"/>
                                     <constraint firstItem="Pyb-k4-koh" firstAttribute="height" secondItem="zY8-uU-258" secondAttribute="height" id="XEO-JQ-Ynk"/>
+                                    <constraint firstItem="DQe-Ph-ljB" firstAttribute="bottom" secondItem="Tvt-Un-DjU" secondAttribute="bottom" id="YXj-AJ-Gkw"/>
+                                    <constraint firstItem="DQe-Ph-ljB" firstAttribute="leading" secondItem="Tvt-Un-DjU" secondAttribute="trailing" constant="10" id="YyN-fX-Zca"/>
                                     <constraint firstAttribute="bottom" secondItem="zY8-uU-258" secondAttribute="bottom" constant="10" id="dWb-hP-DsP"/>
+                                    <constraint firstItem="zY8-uU-258" firstAttribute="bottom" secondItem="Tvt-Un-DjU" secondAttribute="bottom" id="nrT-YE-rOd"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -87,6 +105,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ic_eraser_variant" width="32" height="32"/>
         <image name="ic_file_image" width="32" height="32"/>
+        <image name="ic_lead_pencil" width="32" height="32"/>
     </resources>
 </document>

@@ -39,7 +39,7 @@ class PaintView: UIImageView {
         self.contentMode = .ScaleAspectFit
 
         let gradient = CAGradientLayer()
-        let gradientHeight = self.frame.height / 5
+        let gradientHeight = self.frame.height / 6
         
         let gradientFrame = CGRect(x: 0, y: self.frame.height - gradientHeight, width: self.frame.width, height: gradientHeight)
 
@@ -91,6 +91,10 @@ class PaintView: UIImageView {
     
     func clear() {
         self.image = nil
+    }
+    
+    func getBackground() -> UIImage {
+        return self.image!
     }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
