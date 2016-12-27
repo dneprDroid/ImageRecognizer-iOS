@@ -29,6 +29,7 @@ class RecognButton: UIButton {
         
         self.layer.borderColor = UIColor.whiteColor().CGColor
         self.layer.borderWidth = 1.0
+        self.layer.cornerRadius = 5.0
         self.imageEdgeInsets = UIEdgeInsets(top: 15.0, left: 15.0, bottom: 15.0, right: 15.0)
         self.clipsToBounds = false
         

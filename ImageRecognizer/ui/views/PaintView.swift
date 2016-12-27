@@ -117,7 +117,8 @@ class PaintView: UIImageView {
         let context = UIGraphicsGetCurrentContext()
         self.image?.drawInRect(CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height))
         
-
+        
+        
         CGContextMoveToPoint(context, fromPoint.x, fromPoint.y)
         CGContextAddLineToPoint(context, toPoint.x, toPoint.y)
         
@@ -125,6 +126,11 @@ class PaintView: UIImageView {
         CGContextSetLineWidth(context, brushWidth)
         CGContextSetRGBStrokeColor(context, brushColor.red, brushColor.green, brushColor.blue, 1.0)
         CGContextSetBlendMode(context, .Normal)
+        
+        CGContextSetAllowsAntialiasing(UIGraphicsGetCurrentContext(), true)
+        CGContextSetShouldAntialias(UIGraphicsGetCurrentContext(), true)
+        CGContextSetLineJoin(UIGraphicsGetCurrentContext(), .Round)
+        CGContextSetMiterLimit(UIGraphicsGetCurrentContext(), 2.0)
         
         CGContextStrokePath(context)
         

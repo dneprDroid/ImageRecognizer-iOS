@@ -35,7 +35,7 @@ class ViewController: UIViewController {
         
         if let image = photoImage {
             sender.startAnimation()
-            saveImageToGallery(image)
+            //saveImageToGallery(image)
 
             NNManager.shared().predictImage(image, callback: { description in
                 print("image: \(description)")
