@@ -48,6 +48,7 @@ class ViewController: UIViewController {
     
     @IBAction func clear(sender: UIButton) {
         self.paintView.clear()
+        self.paintView.setPaintMode(.Drawing)
     }
     
     @IBAction func paintModeEnabled(sender: UIButton) {
