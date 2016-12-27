@@ -23,6 +23,10 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pyb-k4-koh">
                                         <rect key="frame" x="518" y="485" width="32" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="1le-Ym-jrx"/>
+                                            <constraint firstAttribute="width" constant="30" id="mDX-Rt-3Ix"/>
+                                        </constraints>
                                         <state key="normal" image="ic_file_image"/>
                                         <connections>
                                             <action selector="onSelectFromGallery:" destination="BYZ-38-t0r" eventType="touchDown" id="srU-9F-28F"/>
@@ -40,6 +44,10 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tvt-Un-DjU">
                                         <rect key="frame" x="-9" y="484" width="81" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="T8S-tL-c09"/>
+                                            <constraint firstAttribute="height" constant="30" id="dcE-Yx-qB1"/>
+                                        </constraints>
                                         <state key="normal" image="ic_lead_pencil"/>
                                         <connections>
                                             <action selector="paintModeEnabled:" destination="BYZ-38-t0r" eventType="touchDown" id="gTF-R7-VBk"/>
@@ -47,6 +55,10 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DQe-Ph-ljB">
                                         <rect key="frame" x="63" y="484" width="75" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="25" id="A51-DK-u0W"/>
+                                            <constraint firstAttribute="height" constant="25" id="uLZ-of-TOI"/>
+                                        </constraints>
                                         <state key="normal" image="ic_eraser_variant"/>
                                         <connections>
                                             <action selector="clear:" destination="BYZ-38-t0r" eventType="touchDown" id="uum-wn-5lO"/>
