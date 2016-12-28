@@ -162,11 +162,10 @@
         
         if(result != nil) {
             NSString * description = [result componentsJoinedByString:@" "];
-            if (description!= nil) {
-                dispatch_async(dispatch_get_main_queue(), ^(){
-                    callback(description);
-                });
-            }
+            
+            dispatch_async(dispatch_get_main_queue(), ^(){
+                callback(description);
+            });
         }
     });
 }
