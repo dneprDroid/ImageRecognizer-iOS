@@ -48,6 +48,17 @@ class PaintView: UIImageView {
 
         gradient.colors = [UIColor.clearColor().CGColor, blackColor]
         self.layer.insertSublayer(gradient, atIndex: 0)
+        
+        //fill color
+        /*
+        UIGraphicsBeginImageContext(self.frame.size)
+        let context = UIGraphicsGetCurrentContext()
+        let drawRect = CGRectMake(self.bounds.origin.x, self.bounds.origin.y, self.bounds.size.width, self.bounds.size.height)
+        CGContextSetRGBFillColor(context, 1, 1, 1, 1.0)
+        CGContextFillRect(context, drawRect)
+        self.image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        */
     }
     
     
@@ -113,7 +124,9 @@ class PaintView: UIImageView {
         
         UIGraphicsBeginImageContext(self.frame.size)
         let context = UIGraphicsGetCurrentContext()
+
         self.image?.drawInRect(CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height))
+
         
         CGContextMoveToPoint(context, fromPoint.x, fromPoint.y)
         CGContextAddLineToPoint(context, toPoint.x, toPoint.y)

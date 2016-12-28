@@ -22,8 +22,8 @@
     if (self = [super init]) {
             NSLog(@"creating mxnet instance.....");
         
-            NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"Inception_BN-symbol.json" ofType:nil];
-            NSString *paramsPath = [[NSBundle mainBundle] pathForResource:@"Inception_BN-0039.params" ofType:nil];
+            NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"symbol.json" ofType:nil];
+            NSString *paramsPath = [[NSBundle mainBundle] pathForResource:@"params" ofType:nil];
             NSString *meanPath = [[NSBundle mainBundle] pathForResource:@"mean_224.bin" ofType:nil];
             NSString *synsetPath = [[NSBundle mainBundle] pathForResource:@"synset.txt" ofType:nil];
         
@@ -36,8 +36,15 @@
             input_keys[0] = [input_name UTF8String];
             const mx_uint input_shape_indptr[] = {0, 4};
             const mx_uint input_shape_data[] = {1, kDefaultChannels, kDefaultWidth, kDefaultHeight};
-            MXPredCreate([model_symbol UTF8String], [model_params bytes], (int)[model_params length], 1, 0, 1,
-                         input_keys, input_shape_indptr, input_shape_data, &predictor);
+        
+            MXPredCreate([model_symbol UTF8String],
+                         [model_params bytes],
+                         (int)[model_params length],
+                         1, 0, 1,
+                         input_keys,
+                         input_shape_indptr,
+                         input_shape_data,
+                         &predictor);
             
             NSData *meanData = [[NSFileManager defaultManager] contentsAtPath:meanPath];
             [meanData getBytes:model_mean length:[meanData length]];
@@ -130,6 +137,7 @@
         };
         for (int i = 0, map_idx = 0, glb_idx = 0; i < kDefaultHeight; i++) {
             for (int j = 0; j < kDefaultWidth; j++) {
+                //NSLog(@"pixel(%i, %i): %hhu", i, j, imageData[glb_idx++]);
                 p_input_buffer[0][map_idx] = imageData[glb_idx++] - p_mean[0][map_idx];
                 p_input_buffer[1][map_idx] = imageData[glb_idx++] - p_mean[1][map_idx];
                 p_input_buffer[2][map_idx] = imageData[glb_idx++] - p_mean[2][map_idx];
