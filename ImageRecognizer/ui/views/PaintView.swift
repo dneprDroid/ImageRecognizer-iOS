@@ -140,7 +140,6 @@ class PaintView: UIImageView {
         CGContextSetShouldAntialias(UIGraphicsGetCurrentContext(), true)
         CGContextSetLineJoin(UIGraphicsGetCurrentContext(), .Round)
         CGContextSetMiterLimit(UIGraphicsGetCurrentContext(), 2.0)
-        
         CGContextStrokePath(context)
         
         self.image = UIGraphicsGetImageFromCurrentImageContext()

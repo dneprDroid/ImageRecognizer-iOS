@@ -21,7 +21,6 @@ class ViewController: UIViewController {
         
         picker = UIImagePickerController()
         picker.delegate = self
-        
         picker.allowsEditing = false
         picker.sourceType = .PhotoLibrary
     }
@@ -37,13 +36,12 @@ class ViewController: UIViewController {
             sender.startAnimation()
             //saveImageToGallery(image)
 
-            NNManager.shared().predictImage(image, callback: { description in
+            NNManager.shared().recognizeImage(image, callback: { description in
                 print("image: \(description)")
                 sender.stopAnimation()
                 AlertToastView.show(self.view, text: description)
             })
         }
-        
     }
     
     @IBAction func clear(sender: UIButton) {
@@ -52,7 +50,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func paintModeEnabled(sender: UIButton) {
-        self.paintView.clear()
+        if self.paintView.paintModeIsPhoto() {
+            self.paintView.clear()
+        }
         self.paintView.setPaintMode(.Drawing)
     }
     
@@ -81,8 +81,6 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
             paintView.setPhoto(pickedImage)
             self.photoImage = pickedImage
         }
-        
         dismissViewControllerAnimated(true, completion: nil)
-        
     }
 }

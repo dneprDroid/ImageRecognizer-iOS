@@ -44,11 +44,13 @@ class RecognButton: UIButton {
                                             options: [.Repeat,  .Autoreverse],
                                             animations: {
                                                 
-            UIView.addKeyframeWithRelativeStartTime(0.0, relativeDuration: self.animationDuration / 2, animations: {
+            UIView.addKeyframeWithRelativeStartTime(0.0,
+                relativeDuration: self.animationDuration / 2, animations: {
                 self.backgroundColor = UIColor.cyanColor()
             })
             
-            UIView.addKeyframeWithRelativeStartTime(self.animationDuration / 2, relativeDuration: self.animationDuration / 2, animations: {
+            UIView.addKeyframeWithRelativeStartTime(self.animationDuration / 2,
+                relativeDuration: self.animationDuration / 2, animations: {
                 self.backgroundColor = UIColor.blueLight()
             })
             
