@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-
+//TODO: set drawing area as a square, because predictor accepts only square images (224 x 224)
 class PaintView: UIImageView {
     
     private var lastPoint = CGPoint.zero
