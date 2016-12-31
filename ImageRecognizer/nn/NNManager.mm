@@ -55,6 +55,16 @@
         //shape of input tensor, image -  1 x 3 color channels x Width x Height
         const mx_uint input_shape_data[] = {1, kDefaultChannels, kDefaultWidth, kDefaultHeight};
     
+        bool modelsNotLoaded = model_symbol == nil || model_params == nil || model_synset == nil;
+        
+        if (modelsNotLoaded) {
+            NSException *e = [NSException
+                              exceptionWithName: @"NullPreTrainedModelException"
+                              reason: @"*** Pre-trained model  is null, cannot load it! Check model name and path!"
+                              userInfo:nil];
+            @throw e;
+        }
+        
         //create predictor
         MXPredCreate([model_symbol UTF8String],     // structure of network (json file)
                      [model_params bytes],          // pre-trained model
@@ -94,18 +104,19 @@
         // Subtract the mean and copy to the input buffer
         std::vector<float> input_buffer(numForComputing);
         float *p_input_buffer[3] = {
-            input_buffer.data(),
-            input_buffer.data() + kDefaultWidth * kDefaultHeight,
+            input_buffer.data() + kDefaultWidth * kDefaultHeight * 0,
+            input_buffer.data() + kDefaultWidth * kDefaultHeight * 1,
             input_buffer.data() + kDefaultWidth * kDefaultHeight * 2
         };
         const float *p_mean[3] = {
-            model_mean,
-            model_mean + kDefaultWidth * kDefaultHeight,
+            model_mean + kDefaultWidth * kDefaultHeight * 0,
+            model_mean + kDefaultWidth * kDefaultHeight * 1,
             model_mean + kDefaultWidth * kDefaultHeight * 2
         };
         for (int i = 0, map_idx = 0, glb_idx = 0; i < kDefaultHeight; i++) {
             for (int j = 0; j < kDefaultWidth; j++) {
                 //NSLog(@"pixel(%i, %i): %hhu", i, j, imageData[glb_idx++]);
+                //NSLog(@"mean(%i, %i): %f, %f, %f", i, j, p_mean[0][map_idx], p_mean[1][map_idx], p_mean[2][map_idx]);
                 p_input_buffer[0][map_idx] = imageData[glb_idx++] - p_mean[0][map_idx];
                 p_input_buffer[1][map_idx] = imageData[glb_idx++] - p_mean[1][map_idx];
                 p_input_buffer[2][map_idx] = imageData[glb_idx++] - p_mean[2][map_idx];
@@ -143,8 +154,8 @@
         // Visualize the Mean Data
         std::vector<uint8_t> mean_with_alpha(kDefaultWidth * kDefaultHeight * (kDefaultChannels + 1), 0);
         float *p_mean[3] = {
-            model_mean,
-            model_mean + kDefaultWidth * kDefaultHeight,
+            model_mean + kDefaultWidth * kDefaultHeight * 0,
+            model_mean + kDefaultWidth * kDefaultHeight * 1,
             model_mean + kDefaultWidth * kDefaultHeight * 2
         };
         
