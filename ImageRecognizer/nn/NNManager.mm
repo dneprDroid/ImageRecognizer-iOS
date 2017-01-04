@@ -34,7 +34,7 @@
         NSData *meanData = [[NSFileManager defaultManager] contentsAtPath:meanPath];
         [meanData getBytes:model_mean length:[meanData length]];
         
-        //load synset...
+        //loading synset...
         model_synset = [NSMutableArray new];
         NSString* synsetText = [NSString stringWithContentsOfFile:synsetPath
                                                          encoding:NSUTF8StringEncoding error:nil];
@@ -52,10 +52,10 @@
         const char *input_keys[1];
         input_keys[0] = [input_name UTF8String];
         const mx_uint input_shape_indptr[] = {0, 4};
-        //shape of input tensor, image -  1 x 3 color channels x Width x Height
+        //shape of input tensor, image -  (1 x 3 color channels x Width x Height)
         const mx_uint input_shape_data[] = {1, kDefaultChannels, kDefaultWidth, kDefaultHeight};
     
-        bool modelsNotLoaded = model_symbol == nil || model_params == nil || model_synset == nil;
+        bool modelsNotLoaded = model_symbol == nil || model_symbol.length == 0 || model_params == nil || model_synset == nil;
         
         if (modelsNotLoaded) {
             NSException *e = [NSException
@@ -113,13 +113,14 @@
             model_mean + kDefaultWidth * kDefaultHeight * 1,
             model_mean + kDefaultWidth * kDefaultHeight * 2
         };
+        
         for (int i = 0, map_idx = 0, glb_idx = 0; i < kDefaultHeight; i++) {
             for (int j = 0; j < kDefaultWidth; j++) {
                 //NSLog(@"pixel(%i, %i): %hhu", i, j, imageData[glb_idx++]);
                 //NSLog(@"mean(%i, %i): %f, %f, %f", i, j, p_mean[0][map_idx], p_mean[1][map_idx], p_mean[2][map_idx]);
-                p_input_buffer[0][map_idx] = imageData[glb_idx++] - p_mean[0][map_idx];
-                p_input_buffer[1][map_idx] = imageData[glb_idx++] - p_mean[1][map_idx];
-                p_input_buffer[2][map_idx] = imageData[glb_idx++] - p_mean[2][map_idx];
+                p_input_buffer[0][map_idx] = imageData[glb_idx++] - p_mean[0][map_idx];//red
+                p_input_buffer[1][map_idx] = imageData[glb_idx++] - p_mean[1][map_idx];//green
+                p_input_buffer[2][map_idx] = imageData[glb_idx++] - p_mean[2][map_idx];//blue
                 glb_idx++;
                 map_idx++;
             }
@@ -130,6 +131,7 @@
         MXPredSetInput(predictor, "data", input_buffer.data(), numForComputing);
         MXPredForward(predictor);
         MXPredGetOutputShape(predictor, 0, &shape, &shape_len);
+        //output tensor size
         mx_uint tt_size = 1;
         for (mx_uint i = 0; i < shape_len; i++) {
             tt_size *= shape[i];
