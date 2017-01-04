@@ -5,7 +5,7 @@ Image classification using neural networks (inception-bn) and MxNet (neuralnet l
 
 *nndata/symbol.json* - structure of the network 
 
-*nndata/syncet.txt* - word dictionary for network, pair output value - word meaning
+*nndata/syncet.txt* - word dictionary for network, pair output value - meaning word 
 #
 <image src=https://github.com/dneprDroid/ImageRecognizer-iOS/blob/master/images/screen1.gif?raw=true height=500 />
 #Android
