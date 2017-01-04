@@ -3,7 +3,7 @@ Image classification using neural networks (inception-bn) and MxNet (neuralnet l
 #
 *nndata/params* - serialized data of the network (weights, convolutional kernels)
 
-*nndata/symbol.json* - structure of network 
+*nndata/symbol.json* - structure of the network 
 
 *nndata/syncet.txt* - word dictionary for network, pair value - words
 #
