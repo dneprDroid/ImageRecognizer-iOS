@@ -1,7 +1,7 @@
 # ImageRecognizer-iOS
 Image classification using neural networks (inception-bn) and **MxNet** (neural net library), implemented for iOS.
 #
-*nn/NNManager.mm* - class working with MxNet API
+[*nn/NNManager.mm*](https://github.com/dneprDroid/ImageRecognizer-iOS/blob/master/ImageRecognizer/nn/NNManager.mm) - class working with MxNet API
 
 *nndata/params* - serialized data of the network (weights, convolutional kernels)
 
