@@ -18,7 +18,7 @@
     return shared;
 }
 
-- (id)initMxnet {
+- (instancetype)initMxnet {
     if (self = [super init]) {
         NSLog(@"creating mxnet instance.....");
     

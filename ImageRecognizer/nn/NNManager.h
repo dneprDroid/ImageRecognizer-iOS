@@ -27,7 +27,7 @@ typedef void(^RecognitionCallback) (NSString *recognResult);
     //UIImage *meanImage;
 }
 
-+ (id)      shared;
++ (instancetype)      shared;
 - (void)    recognizeImage:     (UIImage *)image callback: (RecognitionCallback) callback;
 - (void)    visualizeMeanData:  (void (^)(UIImage *meanImage)) callback;
 
