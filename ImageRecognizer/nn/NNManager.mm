@@ -9,7 +9,7 @@
 
 @implementation NNManager
 
-+ (id)shared {
++ (instancetype) shared {
     static NNManager *shared = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -18,7 +18,7 @@
     return shared;
 }
 
-- (instancetype)initMxnet {
+- (id) initMxnet {
     if (self = [super init]) {
         NSLog(@"creating mxnet instance.....");
     
@@ -185,8 +185,7 @@
                                             provider,
                                             NULL,
                                             false,
-                                            kCGRenderingIntentDefault
-                                            );
+                                            kCGRenderingIntentDefault);
         UIImage *meanImage = [UIImage imageWithCGImage: imageRef];
         CGImageRelease(imageRef);
         CGDataProviderRelease(provider);
