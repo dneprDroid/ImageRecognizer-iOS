@@ -107,10 +107,10 @@
 		220DA9041E11C5B300998A9C /* nndata */ = {
 			isa = PBXGroup;
 			children = (
-				220DA9051E11C5C300998A9C /* params */,
-				220DA9061E11C5C300998A9C /* symbol.json */,
 				220DA9071E11C5C300998A9C /* LICENSE */,
 				220DA9081E11C5C300998A9C /* mean_224.bin */,
+				220DA9051E11C5C300998A9C /* params */,
+				220DA9061E11C5C300998A9C /* symbol.json */,
 				220DA9091E11C5C300998A9C /* synset.txt */,
 			);
 			path = nndata;
@@ -143,14 +143,12 @@
 				2270BFAD1E12B73C00F8438A /* extension */,
 				222A1A331E0ED4B5000ED36D /* nn */,
 				220DA9041E11C5B300998A9C /* nndata */,
+				22B5CD621E239FAE00936F30 /* resources */,
 				22EC3DEF1E1052AC00C01481 /* ui */,
 				226A73001E118D3300154899 /* util */,
 				222A19FE1E0ED454000ED36D /* AppDelegate.swift */,
-				222A1A081E0ED454000ED36D /* Assets.xcassets */,
 				222A1A3D1E0ED776000ED36D /* ImageRecognizer-Bridging-Header.h */,
 				222A1A0D1E0ED454000ED36D /* Info.plist */,
-				222A1A0A1E0ED454000ED36D /* LaunchScreen.storyboard */,
-				222A1A021E0ED454000ED36D /* Main.storyboard */,
 			);
 			path = ImageRecognizer;
 			sourceTree = "<group>";
@@ -208,6 +206,17 @@
 				2270BFAE1E12B74700F8438A /* UIColor.swift */,
 			);
 			path = extension;
+			sourceTree = "<group>";
+		};
+		22B5CD621E239FAE00936F30 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				222A1A081E0ED454000ED36D /* Assets.xcassets */,
+				222A1A0A1E0ED454000ED36D /* LaunchScreen.storyboard */,
+				222A1A021E0ED454000ED36D /* Main.storyboard */,
+			);
+			name = resources;
+			path = resources;
 			sourceTree = "<group>";
 		};
 		22EC3DEF1E1052AC00C01481 /* ui */ = {
