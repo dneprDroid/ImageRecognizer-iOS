@@ -39,7 +39,9 @@ class ImageRecognizerUITests: XCTestCase {
         app.buttons["ic file image"].tap() // go to the gallery
         
         //gallery image picker
-        app.cells.elementBoundByIndex(1).tap()
+        checkGalleryCells()
+        app.cells.textFields["All Photos"].tap()
+        checkGalleryCells()
         app.cells.elementBoundByIndex(0).tap()
         
         app.buttons["What is"].tap()
@@ -47,6 +49,11 @@ class ImageRecognizerUITests: XCTestCase {
         
         XCTAssertFalse(!label.exists, "Image recognition failed (check NNManager)")
         XCTAssertFalse(label.label.isEmpty, "Image recognition failed")
+    }
+    
+    private func checkGalleryCells() {
+        let galleryCellsCount = XCUIApplication().cells.count
+        XCTAssertFalse(galleryCellsCount == 0, "Gallery is empty! Run tests when gallery has images")
     }
     
     /*
