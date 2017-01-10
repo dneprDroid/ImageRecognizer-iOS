@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		220DA90A1E11C5C300998A9C /* params in Resources */ = {isa = PBXBuildFile; fileRef = 220DA9051E11C5C300998A9C /* params */; };
 		220DA90B1E11C5C300998A9C /* symbol.json in Resources */ = {isa = PBXBuildFile; fileRef = 220DA9061E11C5C300998A9C /* symbol.json */; };
-		220DA90C1E11C5C300998A9C /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 220DA9071E11C5C300998A9C /* LICENSE */; };
 		220DA90D1E11C5C300998A9C /* mean_224.bin in Resources */ = {isa = PBXBuildFile; fileRef = 220DA9081E11C5C300998A9C /* mean_224.bin */; };
 		220DA90E1E11C5C300998A9C /* synset.txt in Resources */ = {isa = PBXBuildFile; fileRef = 220DA9091E11C5C300998A9C /* synset.txt */; };
 		222367301E117F1100B30DBE /* PaintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2223672F1E117F1100B30DBE /* PaintView.swift */; };
