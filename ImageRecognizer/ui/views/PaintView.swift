@@ -36,6 +36,7 @@ class PaintView: UIImageView {
     }
     
     func viewInit() {
+        self.accessibilityIdentifier = "paintView"//for testing
         self.contentMode = .ScaleAspectFit
 
         let gradient = CAGradientLayer()

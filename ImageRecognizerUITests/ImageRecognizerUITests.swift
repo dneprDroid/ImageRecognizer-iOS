@@ -29,12 +29,35 @@ class ImageRecognizerUITests: XCTestCase {
     }
     
     func testExample() {
-        let app = XCUIApplication()
-        app.buttons["ic file image"].tap() // gallery
+        galleryTest()
         
-        //image picker
+       //drawingTest()
+    }
+    
+    private func galleryTest() {
+        let app = XCUIApplication()
+        app.buttons["ic file image"].tap() // go to the gallery
+        
+        //gallery image picker
         app.cells.elementBoundByIndex(1).tap()
         app.cells.elementBoundByIndex(0).tap()
+        
+        app.buttons["What is"].tap()
+        let label = app.staticTexts["toastView"] // recognition result
+        
+        XCTAssertFalse(!label.exists, "Image recognition failed (check NNManager)")
+        XCTAssertFalse(label.label.isEmpty, "Image recognition failed")
+    }
+    
+    private func drawingTest() {
+        let app = XCUIApplication()
+        app.buttons["ic eraser variant"].tap() // clean drawing area
+        app.buttons["ic lead pencil"].tap() // enable drawing mode
+        
+        let paintView = app.images["paintView"]
+        let fromCoordinate = paintView.coordinateWithNormalizedOffset(CGVector(dx: 0, dy: 10))
+        let toCoordinate = paintView.coordinateWithNormalizedOffset(CGVector(dx: 0, dy: 20))
+        fromCoordinate.pressForDuration(0, thenDragToCoordinate: toCoordinate)
         
         app.buttons["What is"].tap()
         let label = app.staticTexts["toastView"].label // recognition result
