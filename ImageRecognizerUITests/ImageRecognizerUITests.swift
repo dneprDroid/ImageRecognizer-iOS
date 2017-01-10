@@ -29,8 +29,16 @@ class ImageRecognizerUITests: XCTestCase {
     }
     
     func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let app = XCUIApplication()
+        app.buttons["ic file image"].tap() // gallery
+        
+        //image picker
+        app.cells.elementBoundByIndex(1).tap()
+        app.cells.elementBoundByIndex(0).tap()
+        
+        app.buttons["What is"].tap()
+        let label = app.staticTexts["toastView"].label // recognition result
+        XCTAssertNotNil(label, "Image recognition failed")
     }
     
 }

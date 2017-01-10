@@ -50,6 +50,8 @@ class AlertToastView: UILabel {
     
     class func show(rootView: UIView, text: String) {
         let label = AlertToastView()
+        label.accessibilityIdentifier = "toastView"//for testing
+        
         label.text = text
         
         label.textColor = UIColor.whiteColor()

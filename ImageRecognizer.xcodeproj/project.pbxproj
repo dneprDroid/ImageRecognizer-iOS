@@ -214,7 +214,6 @@
 				222A1A0A1E0ED454000ED36D /* LaunchScreen.storyboard */,
 				222A1A021E0ED454000ED36D /* Main.storyboard */,
 			);
-			name = resources;
 			path = resources;
 			sourceTree = "<group>";
 		};
@@ -335,7 +334,6 @@
 				222A1A091E0ED454000ED36D /* Assets.xcassets in Resources */,
 				220DA90E1E11C5C300998A9C /* synset.txt in Resources */,
 				220DA90D1E11C5C300998A9C /* mean_224.bin in Resources */,
-				220DA90C1E11C5C300998A9C /* LICENSE in Resources */,
 				220DA90A1E11C5C300998A9C /* params in Resources */,
 				222A1A041E0ED454000ED36D /* Main.storyboard in Resources */,
 				220DA90B1E11C5C300998A9C /* symbol.json in Resources */,
