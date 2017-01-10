@@ -49,6 +49,7 @@ class ImageRecognizerUITests: XCTestCase {
         XCTAssertFalse(label.label.isEmpty, "Image recognition failed")
     }
     
+    /*
     private func drawingTest() {
         let app = XCUIApplication()
         app.buttons["ic eraser variant"].tap() // clean drawing area
@@ -63,5 +64,5 @@ class ImageRecognizerUITests: XCTestCase {
         let label = app.staticTexts["toastView"].label // recognition result
         XCTAssertNotNil(label, "Image recognition failed")
     }
-    
+    */
 }
