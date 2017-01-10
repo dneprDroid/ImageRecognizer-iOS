@@ -29,7 +29,7 @@
     
         NSLog(@"mean:  %@", meanPath);
         model_symbol = [[NSString alloc] initWithData:[[NSFileManager defaultManager] contentsAtPath:jsonPath] encoding:NSUTF8StringEncoding];
-        model_params = [[NSFileManager defaultManager] contentsAtPath:paramsPath];
+        model_params = [[NSFileManager defaultManager] contentsAtPath: paramsPath];
         
         NSData *meanData = [[NSFileManager defaultManager] contentsAtPath:meanPath];
         [meanData getBytes:model_mean length:[meanData length]];
@@ -55,7 +55,7 @@
         //shape of input tensor, image -  (1 x 3 color channels x Width x Height)
         const mx_uint input_shape_data[] = {1, kDefaultChannels, kDefaultWidth, kDefaultHeight};
     
-        bool modelsNotLoaded = model_symbol == nil || model_symbol.length == 0 || model_params == nil || model_synset == nil;
+        bool modelsNotLoaded = model_symbol == nil || model_symbol.length == 0 || model_params == nil || model_synset.count == 0;
         
         if (modelsNotLoaded) {
             NSException *e = [NSException
