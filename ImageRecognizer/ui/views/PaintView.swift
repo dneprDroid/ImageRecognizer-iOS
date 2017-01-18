@@ -31,15 +31,9 @@ class PaintView: UIImageView {
         viewInit()
     }
     
-    var percentageCompleted: Double = 0.0 {
-        willSet{
-            gradient.locations = [newValue, newValue]
-        }
-    }
-    
     override func awakeFromNib() {
         self.layer.masksToBounds = true
-        let blackColor = UIColor(white: 0.1, alpha: 0.4).CGColor
+        let blackColor = UIColor(white: 0.1, alpha: 0.3).CGColor
         
         let arrayColors = [UIColor.clearColor().CGColor, blackColor]
         
