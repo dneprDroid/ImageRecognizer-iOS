@@ -18,12 +18,8 @@ class PaintView: UIImageView {
     var brushColor: (red: CGFloat, green: CGFloat, blue: CGFloat)  = UIColor.blueLight().rgbValues()
     private var paintMode: PaintMode = .Drawing
 
-    var path: UIBezierPath  {
-        let path  = UIBezierPath()
-        path.stroke()
-        path.lineWidth = 15
-        return path
-    }
+    //bottom gradient
+    private let gradient : CAGradientLayer = CAGradientLayer()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -35,21 +31,36 @@ class PaintView: UIImageView {
         viewInit()
     }
     
+    var percentageCompleted: Double = 0.0 {
+        willSet{
+            gradient.locations = [newValue, newValue]
+        }
+    }
+    
+    override func awakeFromNib() {
+        self.layer.masksToBounds = true
+        let blackColor = UIColor(white: 0.1, alpha: 0.4).CGColor
+        
+        let arrayColors = [UIColor.clearColor().CGColor, blackColor]
+        
+        gradient.colors = arrayColors
+        
+        gradient.startPoint = CGPoint(x: 0.5, y: 0)
+        gradient.locations = [0.88, 1.0]
+        gradient.endPoint = CGPoint(x: 0.5, y: 1)
+        
+        self.layer.insertSublayer(gradient, atIndex: 0)
+    }
+    
+    override func layoutSublayersOfLayer(layer: CALayer) {
+        super.layoutSublayersOfLayer(layer)
+        gradient.frame = self.bounds
+    }
+    
     func viewInit() {
         self.accessibilityIdentifier = "paintView"//for testing
         self.contentMode = .ScaleAspectFit
 
-        let gradient = CAGradientLayer()
-        let gradientHeight = self.frame.height / 6
-        
-        let gradientFrame = CGRect(x: 0, y: self.frame.height - gradientHeight, width: self.frame.width, height: gradientHeight)
-
-        let blackColor = UIColor(white: 0.1, alpha: 0.5).CGColor
-        gradient.frame = self.layer.convertRect(gradientFrame, toLayer: gradient)
-
-        gradient.colors = [UIColor.clearColor().CGColor, blackColor]
-        self.layer.insertSublayer(gradient, atIndex: 0)
-        
         //fill color
         /*
         UIGraphicsBeginImageContext(self.frame.size)
