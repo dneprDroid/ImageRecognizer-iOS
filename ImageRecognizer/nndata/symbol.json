@@ -53,8 +53,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_1",
       "inputs": [[3, 0], [4, 0], [5, 0]],
@@ -125,8 +126,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_2_1",
       "inputs": [[11, 0], [12, 0], [13, 0]],
@@ -185,8 +187,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_2",
       "inputs": [[18, 0], [19, 0], [20, 0]],
@@ -257,8 +260,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_3a_1x1",
       "inputs": [[26, 0], [27, 0], [28, 0]],
@@ -317,8 +321,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_3a_3x3_reduce",
       "inputs": [[33, 0], [34, 0], [35, 0]],
@@ -377,8 +382,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_3a_3x3",
       "inputs": [[40, 0], [41, 0], [42, 0]],
@@ -437,8 +443,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_3a_double_3x3_reduce",
       "inputs": [[47, 0], [48, 0], [49, 0]],
@@ -497,8 +504,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_3a_double_3x3_0",
       "inputs": [[54, 0], [55, 0], [56, 0]],
@@ -557,8 +565,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_3a_double_3x3_1",
       "inputs": [[61, 0], [62, 0], [63, 0]],
@@ -629,8 +638,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_3a_proj",
       "inputs": [[69, 0], [70, 0], [71, 0]],
@@ -696,8 +706,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_3b_1x1",
       "inputs": [[77, 0], [78, 0], [79, 0]],
@@ -756,8 +767,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_3b_3x3_reduce",
       "inputs": [[84, 0], [85, 0], [86, 0]],
@@ -816,8 +828,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_3b_3x3",
       "inputs": [[91, 0], [92, 0], [93, 0]],
@@ -876,8 +889,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_3b_double_3x3_reduce",
       "inputs": [[98, 0], [99, 0], [100, 0]],
@@ -936,8 +950,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_3b_double_3x3_0",
       "inputs": [[105, 0], [106, 0], [107, 0]],
@@ -996,8 +1011,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_3b_double_3x3_1",
       "inputs": [[112, 0], [113, 0], [114, 0]],
@@ -1068,8 +1084,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_3b_proj",
       "inputs": [[120, 0], [121, 0], [122, 0]],
@@ -1135,8 +1152,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_3c_3x3_reduce",
       "inputs": [[128, 0], [129, 0], [130, 0]],
@@ -1195,8 +1213,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_3c_3x3",
       "inputs": [[135, 0], [136, 0], [137, 0]],
@@ -1255,8 +1274,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_3c_double_3x3_reduce",
       "inputs": [[142, 0], [143, 0], [144, 0]],
@@ -1315,8 +1335,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_3c_double_3x3_0",
       "inputs": [[149, 0], [150, 0], [151, 0]],
@@ -1375,8 +1396,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_3c_double_3x3_1",
       "inputs": [[156, 0], [157, 0], [158, 0]],
@@ -1393,7 +1415,7 @@
       "op": "Pooling",
       "param": {
         "kernel": "(3, 3)",
-        "pad": "(0, 0)",
+        "pad": "(1, 1)",
         "pool_type": "max",
         "stride": "(2, 2)"
       },
@@ -1454,8 +1476,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_4a_1x1",
       "inputs": [[165, 0], [166, 0], [167, 0]],
@@ -1514,8 +1537,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_4a_3x3_reduce",
       "inputs": [[172, 0], [173, 0], [174, 0]],
@@ -1574,8 +1598,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_4a_3x3",
       "inputs": [[179, 0], [180, 0], [181, 0]],
@@ -1634,8 +1659,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_4a_double_3x3_reduce",
       "inputs": [[186, 0], [187, 0], [188, 0]],
@@ -1694,8 +1720,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_4a_double_3x3_0",
       "inputs": [[193, 0], [194, 0], [195, 0]],
@@ -1754,8 +1781,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_4a_double_3x3_1",
       "inputs": [[200, 0], [201, 0], [202, 0]],
@@ -1826,8 +1854,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_4a_proj",
       "inputs": [[208, 0], [209, 0], [210, 0]],
@@ -1893,8 +1922,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_4b_1x1",
       "inputs": [[216, 0], [217, 0], [218, 0]],
@@ -1953,8 +1983,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_4b_3x3_reduce",
       "inputs": [[223, 0], [224, 0], [225, 0]],
@@ -2013,8 +2044,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_4b_3x3",
       "inputs": [[230, 0], [231, 0], [232, 0]],
@@ -2073,8 +2105,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_4b_double_3x3_reduce",
       "inputs": [[237, 0], [238, 0], [239, 0]],
@@ -2133,8 +2166,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_4b_double_3x3_0",
       "inputs": [[244, 0], [245, 0], [246, 0]],
@@ -2193,8 +2227,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_4b_double_3x3_1",
       "inputs": [[251, 0], [252, 0], [253, 0]],
@@ -2265,8 +2300,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_4b_proj",
       "inputs": [[259, 0], [260, 0], [261, 0]],
@@ -2332,8 +2368,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_4c_1x1",
       "inputs": [[267, 0], [268, 0], [269, 0]],
@@ -2392,8 +2429,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_4c_3x3_reduce",
       "inputs": [[274, 0], [275, 0], [276, 0]],
@@ -2452,8 +2490,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_4c_3x3",
       "inputs": [[281, 0], [282, 0], [283, 0]],
@@ -2512,8 +2551,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_4c_double_3x3_reduce",
       "inputs": [[288, 0], [289, 0], [290, 0]],
@@ -2572,8 +2612,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_4c_double_3x3_0",
       "inputs": [[295, 0], [296, 0], [297, 0]],
@@ -2632,8 +2673,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_4c_double_3x3_1",
       "inputs": [[302, 0], [303, 0], [304, 0]],
@@ -2704,8 +2746,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_4c_proj",
       "inputs": [[310, 0], [311, 0], [312, 0]],
@@ -2771,8 +2814,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_4d_1x1",
       "inputs": [[318, 0], [319, 0], [320, 0]],
@@ -2831,8 +2875,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_4d_3x3_reduce",
       "inputs": [[325, 0], [326, 0], [327, 0]],
@@ -2891,8 +2936,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_4d_3x3",
       "inputs": [[332, 0], [333, 0], [334, 0]],
@@ -2951,8 +2997,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_4d_double_3x3_reduce",
       "inputs": [[339, 0], [340, 0], [341, 0]],
@@ -3011,8 +3058,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_4d_double_3x3_0",
       "inputs": [[346, 0], [347, 0], [348, 0]],
@@ -3071,8 +3119,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_4d_double_3x3_1",
       "inputs": [[353, 0], [354, 0], [355, 0]],
@@ -3143,8 +3192,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_4d_proj",
       "inputs": [[361, 0], [362, 0], [363, 0]],
@@ -3210,8 +3260,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_4e_3x3_reduce",
       "inputs": [[369, 0], [370, 0], [371, 0]],
@@ -3270,8 +3321,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_4e_3x3",
       "inputs": [[376, 0], [377, 0], [378, 0]],
@@ -3330,8 +3382,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_4e_double_3x3_reduce",
       "inputs": [[383, 0], [384, 0], [385, 0]],
@@ -3390,8 +3443,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_4e_double_3x3_0",
       "inputs": [[390, 0], [391, 0], [392, 0]],
@@ -3450,8 +3504,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_4e_double_3x3_1",
       "inputs": [[397, 0], [398, 0], [399, 0]],
@@ -3468,7 +3523,7 @@
       "op": "Pooling",
       "param": {
         "kernel": "(3, 3)",
-        "pad": "(0, 0)",
+        "pad": "(1, 1)",
         "pool_type": "max",
         "stride": "(2, 2)"
       },
@@ -3529,8 +3584,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_5a_1x1",
       "inputs": [[406, 0], [407, 0], [408, 0]],
@@ -3589,8 +3645,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_5a_3x3_reduce",
       "inputs": [[413, 0], [414, 0], [415, 0]],
@@ -3649,8 +3706,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_5a_3x3",
       "inputs": [[420, 0], [421, 0], [422, 0]],
@@ -3709,8 +3767,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_5a_double_3x3_reduce",
       "inputs": [[427, 0], [428, 0], [429, 0]],
@@ -3769,8 +3828,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_5a_double_3x3_0",
       "inputs": [[434, 0], [435, 0], [436, 0]],
@@ -3829,8 +3889,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_5a_double_3x3_1",
       "inputs": [[441, 0], [442, 0], [443, 0]],
@@ -3901,8 +3962,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_5a_proj",
       "inputs": [[449, 0], [450, 0], [451, 0]],
@@ -3968,8 +4030,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_5b_1x1",
       "inputs": [[457, 0], [458, 0], [459, 0]],
@@ -4028,8 +4091,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_5b_3x3_reduce",
       "inputs": [[464, 0], [465, 0], [466, 0]],
@@ -4088,8 +4152,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_5b_3x3",
       "inputs": [[471, 0], [472, 0], [473, 0]],
@@ -4148,8 +4213,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_5b_double_3x3_reduce",
       "inputs": [[478, 0], [479, 0], [480, 0]],
@@ -4208,8 +4274,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_5b_double_3x3_0",
       "inputs": [[485, 0], [486, 0], [487, 0]],
@@ -4268,8 +4335,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_5b_double_3x3_1",
       "inputs": [[492, 0], [493, 0], [494, 0]],
@@ -4340,8 +4408,9 @@
     {
       "op": "BatchNorm",
       "param": {
-        "eps": "1e-10",
-        "momentum": "0.1"
+        "eps": "1e-4",
+        "fix_gamma": "False",
+        "momentum": "0.9"
       },
       "name": "bn_5b_proj",
       "inputs": [[500, 0], [501, 0], [502, 0]],

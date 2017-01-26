@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		220DA90A1E11C5C300998A9C /* params in Resources */ = {isa = PBXBuildFile; fileRef = 220DA9051E11C5C300998A9C /* params */; };
-		220DA90B1E11C5C300998A9C /* symbol.json in Resources */ = {isa = PBXBuildFile; fileRef = 220DA9061E11C5C300998A9C /* symbol.json */; };
 		220DA90D1E11C5C300998A9C /* mean_224.bin in Resources */ = {isa = PBXBuildFile; fileRef = 220DA9081E11C5C300998A9C /* mean_224.bin */; };
 		220DA90E1E11C5C300998A9C /* synset.txt in Resources */ = {isa = PBXBuildFile; fileRef = 220DA9091E11C5C300998A9C /* synset.txt */; };
 		222367301E117F1100B30DBE /* PaintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2223672F1E117F1100B30DBE /* PaintView.swift */; };
@@ -23,6 +21,8 @@
 		226A73021E118D4500154899 /* UtilMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226A73011E118D4500154899 /* UtilMethods.swift */; };
 		226A73051E118E6100154899 /* RecognButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226A73041E118E6100154899 /* RecognButton.swift */; };
 		2270BFAF1E12B74700F8438A /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2270BFAE1E12B74700F8438A /* UIColor.swift */; };
+		22A480DF1E3A6C8C001BCA74 /* symbol.json in Resources */ = {isa = PBXBuildFile; fileRef = 22A480DD1E3A6C8C001BCA74 /* symbol.json */; };
+		22A480E01E3A6C8C001BCA74 /* params in Resources */ = {isa = PBXBuildFile; fileRef = 22A480DE1E3A6C8C001BCA74 /* params */; };
 		22EACAD51E12807C005C6EA3 /* AlertToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EACAD41E12807C005C6EA3 /* AlertToastView.swift */; };
 		22EC3DED1E1051BF00C01481 /* mxnet_predict-all.cc in Sources */ = {isa = PBXBuildFile; fileRef = 22EC3DE91E1051BF00C01481 /* mxnet_predict-all.cc */; };
 		22EC3DEE1E1051BF00C01481 /* NNManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 22EC3DEB1E1051BF00C01481 /* NNManager.mm */; };
@@ -46,9 +46,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		220DA9051E11C5C300998A9C /* params */ = {isa = PBXFileReference; lastKnownFileType = file; path = params; sourceTree = "<group>"; };
-		220DA9061E11C5C300998A9C /* symbol.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = symbol.json; sourceTree = "<group>"; };
-		220DA9071E11C5C300998A9C /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		220DA9081E11C5C300998A9C /* mean_224.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = mean_224.bin; sourceTree = "<group>"; };
 		220DA9091E11C5C300998A9C /* synset.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = synset.txt; sourceTree = "<group>"; };
 		2223672F1E117F1100B30DBE /* PaintView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaintView.swift; sourceTree = "<group>"; };
@@ -70,8 +67,10 @@
 		226A73011E118D4500154899 /* UtilMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilMethods.swift; sourceTree = "<group>"; };
 		226A73041E118E6100154899 /* RecognButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecognButton.swift; sourceTree = "<group>"; };
 		2270BFAE1E12B74700F8438A /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		22A480DC1E3A6475001BCA74 /* c_predict_api.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = c_predict_api.h; sourceTree = "<group>"; };
+		22A480DD1E3A6C8C001BCA74 /* symbol.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = symbol.json; sourceTree = "<group>"; };
+		22A480DE1E3A6C8C001BCA74 /* params */ = {isa = PBXFileReference; lastKnownFileType = file; path = params; sourceTree = "<group>"; };
 		22EACAD41E12807C005C6EA3 /* AlertToastView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertToastView.swift; sourceTree = "<group>"; };
-		22EC3DE71E1051BF00C01481 /* c_predict_api.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = c_predict_api.h; sourceTree = "<group>"; };
 		22EC3DE91E1051BF00C01481 /* mxnet_predict-all.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "mxnet_predict-all.cc"; sourceTree = "<group>"; };
 		22EC3DEA1E1051BF00C01481 /* NNManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNManager.h; sourceTree = "<group>"; };
 		22EC3DEB1E1051BF00C01481 /* NNManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NNManager.mm; sourceTree = "<group>"; };
@@ -106,10 +105,9 @@
 		220DA9041E11C5B300998A9C /* nndata */ = {
 			isa = PBXGroup;
 			children = (
-				220DA9071E11C5C300998A9C /* LICENSE */,
 				220DA9081E11C5C300998A9C /* mean_224.bin */,
-				220DA9051E11C5C300998A9C /* params */,
-				220DA9061E11C5C300998A9C /* symbol.json */,
+				22A480DE1E3A6C8C001BCA74 /* params */,
+				22A480DD1E3A6C8C001BCA74 /* symbol.json */,
 				220DA9091E11C5C300998A9C /* synset.txt */,
 			);
 			path = nndata;
@@ -173,10 +171,9 @@
 		222A1A331E0ED4B5000ED36D /* nn */ = {
 			isa = PBXGroup;
 			children = (
+				22A480E11E3A6DA0001BCA74 /* mxnet */,
 				22EC3DEA1E1051BF00C01481 /* NNManager.h */,
 				22EC3DEB1E1051BF00C01481 /* NNManager.mm */,
-				22EC3DE71E1051BF00C01481 /* c_predict_api.h */,
-				22EC3DE91E1051BF00C01481 /* mxnet_predict-all.cc */,
 			);
 			path = nn;
 			sourceTree = "<group>";
@@ -205,6 +202,16 @@
 				2270BFAE1E12B74700F8438A /* UIColor.swift */,
 			);
 			path = extension;
+			sourceTree = "<group>";
+		};
+		22A480E11E3A6DA0001BCA74 /* mxnet */ = {
+			isa = PBXGroup;
+			children = (
+				22A480DC1E3A6475001BCA74 /* c_predict_api.h */,
+				22EC3DE91E1051BF00C01481 /* mxnet_predict-all.cc */,
+			);
+			name = mxnet;
+			path = mxnet;
 			sourceTree = "<group>";
 		};
 		22B5CD621E239FAE00936F30 /* resources */ = {
@@ -330,13 +337,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22A480E01E3A6C8C001BCA74 /* params in Resources */,
 				222A1A0C1E0ED454000ED36D /* LaunchScreen.storyboard in Resources */,
 				222A1A091E0ED454000ED36D /* Assets.xcassets in Resources */,
 				220DA90E1E11C5C300998A9C /* synset.txt in Resources */,
+				22A480DF1E3A6C8C001BCA74 /* symbol.json in Resources */,
 				220DA90D1E11C5C300998A9C /* mean_224.bin in Resources */,
-				220DA90A1E11C5C300998A9C /* params in Resources */,
 				222A1A041E0ED454000ED36D /* Main.storyboard in Resources */,
-				220DA90B1E11C5C300998A9C /* symbol.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
