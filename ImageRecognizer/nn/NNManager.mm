@@ -131,11 +131,16 @@
         MXPredSetInput(predictor, "data", input_buffer.data(), numForComputing);
         MXPredForward(predictor);
         MXPredGetOutputShape(predictor, 0, &shape, &shape_len);
+        
+        NSMutableString *outputShape = [NSMutableString string];
         //output tensor size
         mx_uint tt_size = 1;
         for (mx_uint i = 0; i < shape_len; i++) {
             tt_size *= shape[i];
+            [outputShape appendFormat: @"%i,", shape[i]];
         }
+        NSLog(@"output tensor shape: [%@]", outputShape);
+
         std::vector<float> outputs(tt_size);
         MXPredGetOutput(predictor, 0, outputs.data(), tt_size);
         size_t max_idx = std::distance(outputs.begin(), std::max_element(outputs.begin(), outputs.end()));
