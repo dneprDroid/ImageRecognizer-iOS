@@ -142,10 +142,10 @@ class PaintView: UIImageView {
         CGContextSetRGBStrokeColor(context, brushColor.red, brushColor.green, brushColor.blue, 1.0)
         CGContextSetBlendMode(context, .Normal)
         
-        CGContextSetAllowsAntialiasing(UIGraphicsGetCurrentContext(), true)
-        CGContextSetShouldAntialias(UIGraphicsGetCurrentContext(), true)
-        CGContextSetLineJoin(UIGraphicsGetCurrentContext(), .Round)
-        CGContextSetMiterLimit(UIGraphicsGetCurrentContext(), 2.0)
+        CGContextSetAllowsAntialiasing(context, true)
+        CGContextSetShouldAntialias(context, true)
+        CGContextSetLineJoin(context, .Round)
+        CGContextSetMiterLimit(context, 2.0)
         CGContextStrokePath(context)
         
         self.image = UIGraphicsGetImageFromCurrentImageContext()
