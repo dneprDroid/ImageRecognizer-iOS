@@ -7,6 +7,8 @@
 
 #import "NNManager.h"
 
+#define PathToResource(path) [[NSBundle mainBundle] pathForResource: path ofType:nil]
+
 @implementation NNManager
 
 + (instancetype) shared {
@@ -22,11 +24,11 @@
     if (self = [super init]) {
         NSLog(@"creating mxnet instance.....");
     
-        NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"symbol.json" ofType:nil];
-        NSString *paramsPath = [[NSBundle mainBundle] pathForResource:@"params" ofType:nil];
-        NSString *meanPath = [[NSBundle mainBundle] pathForResource:@"mean_224.bin" ofType:nil];
-        NSString *synsetPath = [[NSBundle mainBundle] pathForResource:@"synset.txt" ofType:nil];
-    
+        NSString *jsonPath      = PathToResource(@"symbol.json");
+        NSString *paramsPath    = PathToResource(@"params");
+        NSString *meanPath      = PathToResource(@"mean_224.bin");
+        NSString *synsetPath    = PathToResource(@"synset.txt");
+                                    
         NSLog(@"mean:  %@", meanPath);
         model_symbol = [[NSString alloc] initWithData:[[NSFileManager defaultManager] contentsAtPath:jsonPath] encoding:NSUTF8StringEncoding];
         model_params = [[NSFileManager defaultManager] contentsAtPath: paramsPath];
