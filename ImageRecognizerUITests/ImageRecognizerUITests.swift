@@ -39,7 +39,9 @@ class ImageRecognizerUITests: XCTestCase {
         app.buttons["ic file image"].tap() // go to the gallery
         
         //gallery image picker
-        app.cells.elementBoundByIndex(1).tap()
+        checkGalleryCells()
+        app.cells.textFields["All Photos"].tap()
+        checkGalleryCells()
         app.cells.elementBoundByIndex(0).tap()
         
         app.buttons["What is"].tap()
@@ -49,6 +51,12 @@ class ImageRecognizerUITests: XCTestCase {
         XCTAssertFalse(label.label.isEmpty, "Image recognition failed")
     }
     
+    private func checkGalleryCells() {
+        let galleryCellsCount = XCUIApplication().cells.count
+        XCTAssertFalse(galleryCellsCount == 0, "Gallery is empty! Run tests when gallery has images")
+    }
+    
+    /*
     private func drawingTest() {
         let app = XCUIApplication()
         app.buttons["ic eraser variant"].tap() // clean drawing area
@@ -63,5 +71,5 @@ class ImageRecognizerUITests: XCTestCase {
         let label = app.staticTexts["toastView"].label // recognition result
         XCTAssertNotNil(label, "Image recognition failed")
     }
-    
+    */
 }
