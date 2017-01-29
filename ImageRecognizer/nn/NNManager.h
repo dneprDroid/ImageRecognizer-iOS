@@ -24,7 +24,6 @@ typedef void(^RecognitionCallback) (NSString *recognResult);
     NSData *model_params;
     NSMutableArray *model_synset;
     float model_mean[kDefaultImageSize];
-    //UIImage *meanImage;
 }
 
 + (instancetype)      shared;
