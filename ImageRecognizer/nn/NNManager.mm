@@ -76,7 +76,7 @@
                      input_shape_indptr,
                      input_shape_data,
                      &predictor);
-        NSLog(@"mxnet predictor created.....");
+        NSLog(@"mxnet predictor has been created...");
 
         //[self visualizeMeanData];
     }
@@ -172,10 +172,10 @@
         
         for (int i = 0, map_idx = 0, glb_idx = 0; i < kDefaultHeight; i++) {
             for (int j = 0; j < kDefaultWidth; j++) {
-                mean_with_alpha[glb_idx++] = p_mean[0][map_idx];
-                mean_with_alpha[glb_idx++] = p_mean[1][map_idx];
-                mean_with_alpha[glb_idx++] = p_mean[2][map_idx];
-                mean_with_alpha[glb_idx++] = 0;
+                mean_with_alpha[glb_idx++] = p_mean[0][map_idx]; // red
+                mean_with_alpha[glb_idx++] = p_mean[1][map_idx]; // green
+                mean_with_alpha[glb_idx++] = p_mean[2][map_idx]; // blue
+                mean_with_alpha[glb_idx++] = 0; // alpha
                 map_idx++;
             }
         }
