@@ -3,6 +3,8 @@ Image classification using neural networks (inception-bn) and [**MxNet**](https:
 #
 [*nn/NNManager.mm*](https://github.com/dneprDroid/ImageRecognizer-iOS/blob/master/ImageRecognizer/nn/NNManager.mm) - class working with **MxNet library**
 
+Pre-trained model:
+
 *nndata/params* - serialized data of the network (weights, convolutional kernels)
 
 *nndata/symbol.json* - structure of the network 
