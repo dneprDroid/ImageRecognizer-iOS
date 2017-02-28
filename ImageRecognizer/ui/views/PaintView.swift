@@ -32,6 +32,7 @@ class PaintView: UIImageView {
     }
     
     override func awakeFromNib() {
+        super.awakeFromNib()
         self.layer.masksToBounds = true
         let blackColor = UIColor(white: 0.1, alpha: 0.3).CGColor
         
