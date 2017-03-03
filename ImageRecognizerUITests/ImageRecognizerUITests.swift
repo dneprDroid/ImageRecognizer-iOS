@@ -28,13 +28,7 @@ class ImageRecognizerUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        galleryTest()
-        
-       //drawingTest()
-    }
-    
-    private func galleryTest() {
+    func galleryTest() {
         let app = XCUIApplication()
         app.buttons["ic file image"].tap() // go to the gallery
         
@@ -57,7 +51,7 @@ class ImageRecognizerUITests: XCTestCase {
     }
     
     /*
-    private func drawingTest() {
+    func drawingTest() {
         let app = XCUIApplication()
         app.buttons["ic eraser variant"].tap() // clean drawing area
         app.buttons["ic lead pencil"].tap() // enable drawing mode

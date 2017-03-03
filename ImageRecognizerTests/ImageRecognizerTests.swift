@@ -21,9 +21,15 @@ class ImageRecognizerTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testNNManager() {
+        let image = UIImage(named: "test_image")
+        do {
+            try NNManager.shared().recognizeImage(image) { tag in
+                XCTAssertTrue(tag == nil || tag.isEmpty, "Image description is empty!")
+            }
+        } catch _ {
+            XCTFail("Recognition falied")
+        }
     }
     
     func testPerformanceExample() {

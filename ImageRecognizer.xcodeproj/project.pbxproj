@@ -20,6 +20,7 @@
 		222A1A171E0ED454000ED36D /* ImageRecognizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222A1A161E0ED454000ED36D /* ImageRecognizerTests.swift */; };
 		222A1A221E0ED454000ED36D /* ImageRecognizerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222A1A211E0ED454000ED36D /* ImageRecognizerUITests.swift */; };
 		222A1A3F1E0ED96B000ED36D /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 222A1A3E1E0ED96B000ED36D /* Accelerate.framework */; };
+		2262A0731E69CE5200227925 /* test_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 2262A0721E69CE5200227925 /* test_image.png */; };
 		226A73021E118D4500154899 /* UtilMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226A73011E118D4500154899 /* UtilMethods.swift */; };
 		226A73051E118E6100154899 /* RecognButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226A73041E118E6100154899 /* RecognButton.swift */; };
 		2270BFAF1E12B74700F8438A /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2270BFAE1E12B74700F8438A /* UIColor.swift */; };
@@ -67,6 +68,7 @@
 		222A1A231E0ED454000ED36D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		222A1A3D1E0ED776000ED36D /* ImageRecognizer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ImageRecognizer-Bridging-Header.h"; sourceTree = "<group>"; };
 		222A1A3E1E0ED96B000ED36D /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		2262A0721E69CE5200227925 /* test_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_image.png; sourceTree = "<group>"; };
 		226A73011E118D4500154899 /* UtilMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilMethods.swift; sourceTree = "<group>"; };
 		226A73041E118E6100154899 /* RecognButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecognButton.swift; sourceTree = "<group>"; };
 		2270BFAE1E12B74700F8438A /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 		222A1A151E0ED454000ED36D /* ImageRecognizerTests */ = {
 			isa = PBXGroup;
 			children = (
+				2262A0721E69CE5200227925 /* test_image.png */,
 				222A1A161E0ED454000ED36D /* ImageRecognizerTests.swift */,
 				222A1A181E0ED454000ED36D /* Info.plist */,
 			);
@@ -344,6 +347,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2262A0731E69CE5200227925 /* test_image.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
