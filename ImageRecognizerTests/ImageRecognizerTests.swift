@@ -22,14 +22,21 @@ class ImageRecognizerTests: XCTestCase {
     }
     
     func testNNManager() {
-        let image = UIImage(named: "test_image")
+        let image = loadTestImage("test_image")
+        XCTAssertNotNil(image, "Test image is empty!")
         do {
             try NNManager.shared().recognizeImage(image) { tag in
-                XCTAssertTrue(tag == nil || tag.isEmpty, "Image description is empty!")
+                XCTAssertNotNil(tag, "Image description is empty!")
             }
         } catch _ {
-            XCTFail("Recognition falied")
+            XCTFail("Recognition falied!")
         }
+    }
+    
+    private func loadTestImage(named: String) -> UIImage? {
+        let bundle = NSBundle(forClass: ImageRecognizerTests.self)
+        let img = UIImage(named: named, inBundle: bundle, compatibleWithTraitCollection: nil)
+        return img
     }
     
     func testPerformanceExample() {
