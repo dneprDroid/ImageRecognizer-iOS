@@ -7,7 +7,19 @@
 
 #import "NNManager.h"
 
-#define pathToResource(path) [[NSBundle mainBundle] pathForResource: path ofType:nil]
+#define pathToResource(path) [[NSBundle mainBundle] pathForResource: path ofType: nil]
+#define arrSize(arr)  sizeof(arr) / sizeof(arr[0])
+
+#define MEAN_R 117.0f
+#define MEAN_G 117.0f
+#define MEAN_B 117.0f
+
+//width=224 and height=224 - default size of input image (tensor) for inception-bn network
+#define kDefaultWidth 224
+#define kDefaultHeight 224
+//color channels (rgb without alpha)
+#define kDefaultChannels 3
+#define kDefaultImageSize (kDefaultWidth * kDefaultHeight * kDefaultChannels)
 
 @implementation NNManager
 
@@ -26,15 +38,10 @@
     
         NSString *jsonPath      = pathToResource(@"symbol.json");
         NSString *paramsPath    = pathToResource(@"params");
-        NSString *meanPath      = pathToResource(@"mean_224.bin");
         NSString *synsetPath    = pathToResource(@"synset.txt");
                                     
-        NSLog(@"mean:  %@", meanPath);
-        model_symbol = [[NSString alloc] initWithData:[[NSFileManager defaultManager] contentsAtPath:jsonPath] encoding:NSUTF8StringEncoding];
-        model_params = [[NSFileManager defaultManager] contentsAtPath: paramsPath];
-        
-        NSData *meanData = [[NSFileManager defaultManager] contentsAtPath:meanPath];
-        [meanData getBytes:model_mean length:[meanData length]];
+        NSString *model_symbol = [[NSString alloc] initWithData:[[NSFileManager defaultManager] contentsAtPath:jsonPath] encoding:NSUTF8StringEncoding];
+        NSData *model_params = [[NSFileManager defaultManager] contentsAtPath: paramsPath];
         
         //loading synset...
         model_synset = [NSMutableArray new];
@@ -77,8 +84,6 @@
                      input_shape_data,
                      &predictor);
         NSLog(@"mxnet predictor has been created...");
-
-        //[self visualizeMeanData];
     }
     return self;
 }
@@ -92,7 +97,7 @@
      
         CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
         
-        uint8_t imageData[numForRendering];
+        uint8_t *imageData = new uint8_t[numForRendering];
         CGContextRef contextRef = CGBitmapContextCreate(imageData,
                                                         kDefaultWidth,
                                                         kDefaultHeight,
@@ -105,49 +110,37 @@
         CGColorSpaceRelease(colorSpace);
         
         // Subtract the mean and copy to the input buffer
-        std::vector<float> input_buffer(numForComputing);
-        float *p_input_buffer[3] = {
-            input_buffer.data() + kDefaultWidth * kDefaultHeight * 0,
-            input_buffer.data() + kDefaultWidth * kDefaultHeight * 1,
-            input_buffer.data() + kDefaultWidth * kDefaultHeight * 2
-        };
-        const float *p_mean[3] = {
-            model_mean + kDefaultWidth * kDefaultHeight * 0,
-            model_mean + kDefaultWidth * kDefaultHeight * 1,
-            model_mean + kDefaultWidth * kDefaultHeight * 2
-        };
+        float *input_buffer = new float[numForComputing];
         
-        for (int i = 0, map_idx = 0, glb_idx = 0; i < kDefaultHeight; i++) {
-            for (int j = 0; j < kDefaultWidth; j++) {
-                //NSLog(@"pixel(%i, %i): %hhu", i, j, imageData[glb_idx++]);
-                //NSLog(@"mean(%i, %i): %f, %f, %f", i, j, p_mean[0][map_idx], p_mean[1][map_idx], p_mean[2][map_idx]);
-                p_input_buffer[0][map_idx] = imageData[glb_idx++] - p_mean[0][map_idx];//red
-                p_input_buffer[1][map_idx] = imageData[glb_idx++] - p_mean[1][map_idx];//green
-                p_input_buffer[2][map_idx] = imageData[glb_idx++] - p_mean[2][map_idx];//blue
-                glb_idx++;
-                map_idx++;
-            }
+        for (int i = 0; i < numForRendering; i += 4) {
+            int j = i / 4;
+            input_buffer[0 * kDefaultWidth * kDefaultHeight + j] = (imageData[i + 0] & 0xFF) - MEAN_R; // red
+            input_buffer[1 * kDefaultWidth * kDefaultHeight + j] = (imageData[i + 1] & 0xFF) - MEAN_G; // green
+            input_buffer[2 * kDefaultWidth * kDefaultHeight + j] = (imageData[i + 2] & 0xFF) - MEAN_B; // blue
         }
         
         mx_uint *shape = nil;
         mx_uint shape_len = 0;
-        MXPredSetInput(predictor, "data", input_buffer.data(), numForComputing);
+        MXPredSetInput(predictor, "data", input_buffer, numForComputing);
         MXPredForward(predictor);
+        
+        delete[] input_buffer;
+        delete[] imageData;
+        
         MXPredGetOutputShape(predictor, 0, &shape, &shape_len);
         
-        NSMutableString *outputShape = [NSMutableString string];
         //output tensor size
         mx_uint tt_size = 1;
         for (mx_uint i = 0; i < shape_len; i++) {
             tt_size *= shape[i];
-            [outputShape appendFormat: @"%i,", shape[i]];
         }
-        NSLog(@"output tensor shape: [%@]", outputShape);
 
         std::vector<float> outputs(tt_size);
         MXPredGetOutput(predictor, 0, outputs.data(), tt_size);
+        
         size_t max_idx = std::distance(outputs.begin(), std::max_element(outputs.begin(), outputs.end()));
         NSArray *result = [model_synset objectAtIndex:max_idx];
+        outputs.clear();
         
         if(result != nil) {
             NSString * description = [result componentsJoinedByString:@" "];
@@ -163,6 +156,13 @@
 - (void) visualizeMeanData: (void (^)(UIImage *meanImage)) callback {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(){
         // Visualize the Mean Data
+        float model_mean[kDefaultImageSize];
+
+        NSString *meanPath  = pathToResource(@"mean_224.bin");
+        
+        NSData *meanData = [[NSFileManager defaultManager] contentsAtPath:meanPath];
+        [meanData getBytes:model_mean length:[meanData length]];
+        
         std::vector<uint8_t> mean_with_alpha(kDefaultWidth * kDefaultHeight * (kDefaultChannels + 1), 0);
         float *p_mean[3] = {
             model_mean + kDefaultWidth * kDefaultHeight * 0,
