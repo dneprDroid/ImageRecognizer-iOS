@@ -15,11 +15,11 @@ Pre-trained model:
 
 <image src=https://raw.githubusercontent.com/dneprDroid/ImageRecognizer-iOS/master/images/screen1.gif height=500 />
 
-#Android
+# Android
 
 Android version - https://github.com/dneprDroid/ImageRecognizer
 
-#Links
+# Links
   * https://github.com/dmlc/mxnet - MxNet library 
   * https://culurciello.github.io/tech/2016/06/04/nets.html - architectures of neural nets, including inception-bn arch.
   * https://github.com/Trangle/mxnet-inception-v4 - inceprion network trainer
