@@ -10,10 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var paintView: PaintView!
+    @IBOutlet fileprivate weak var paintView: PaintView!
     
-    private var photoImage: UIImage?
-    private var picker: UIImagePickerController!
+    fileprivate var photoImage: UIImage?
+    fileprivate lazy var picker: UIImagePickerController = .init()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,10 +22,28 @@ class ViewController: UIViewController {
         picker = UIImagePickerController()
         picker.delegate = self
         picker.allowsEditing = false
-        picker.sourceType = .PhotoLibrary
+        picker.sourceType = .photoLibrary
     }
     
-    @IBAction func onRecognTapped(sender: RecognButton) {
+    private func setupToolbar() {
+        self.navigationController?.navigationBar.barStyle = .black
+        self.navigationItem.title = "ImageRecognizer"
+        
+        let titleShadow = NSShadow()
+        titleShadow.shadowColor =  UIColor.black
+        titleShadow.shadowOffset = CGSize(width: 0, height: 1.5)
+
+        self.navigationController?.navigationBar.titleTextAttributes = [
+            NSAttributedStringKey.shadow:  titleShadow,
+            NSAttributedStringKey.font:    UIFont(name: "HelveticaNeue-CondensedBlack", size: 17.0)!]
+    }
+}
+
+
+//MARK: IBActions
+extension ViewController {
+    
+    @IBAction private func onRecognTapped(_ sender: RecognButton) {
         if paintView.paintModeIsDrawing() {
             if let image = paintView.getBackground() {
                 self.photoImage = image
@@ -35,52 +53,42 @@ class ViewController: UIViewController {
         if let image = photoImage {
             sender.startAnimation()
             //saveImageToGallery(image)
-
-            NNManager.shared().recognizeImage(image, callback: { description in
-                print("image: \(description)")
+            
+            NNManager.shared().recognizeImage(image,
+                                              callback: {[weak self] (description:String?) in
+                print("image: \(description ?? "Undefined" )")
                 sender.stopAnimation()
-                AlertToastView.show(self.view, text: description)
+                guard let imageDescription = description,
+                    let rootView = self?.view else { return }
+                AlertToastView.show(rootView: rootView, text: imageDescription)
             })
         }
     }
     
-    @IBAction func clear(sender: UIButton) {
+    @IBAction private func clear(_ sender: UIButton) {
         self.paintView.clear()
-        self.paintView.setPaintMode(.Drawing)
+        self.paintView.setPaintMode(mode: .Drawing)
     }
     
-    @IBAction func paintModeEnabled(sender: UIButton) {
+    @IBAction private func paintModeEnabled(_ sender: UIButton) {
         if self.paintView.paintModeIsPhoto() {
             self.paintView.clear()
         }
-        self.paintView.setPaintMode(.Drawing)
+        self.paintView.setPaintMode(mode: .Drawing)
     }
     
-    @IBAction func onSelectFromGallery(sender: UIButton) {
-        presentViewController(picker, animated: true, completion: nil)
-    }
-    
-    private func setupToolbar() {
-        self.navigationController?.navigationBar.barStyle = .Black
-        self.navigationItem.title = "ImageRecognizer"
-        
-        let titleShadow = NSShadow()
-        titleShadow.shadowColor =  UIColor.blackColor()
-        titleShadow.shadowOffset = CGSize(width: 0, height: 1.5)
-
-        self.navigationController?.navigationBar.titleTextAttributes = [
-            NSShadowAttributeName:  titleShadow,
-            NSFontAttributeName:    UIFont(name: "HelveticaNeue-CondensedBlack", size: 17.0)!]
+    @IBAction private func onSelectFromGallery(_ sender: UIButton) {
+        present(picker, animated: true, completion: nil)
     }
 }
 
 extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            paintView.setPhoto(pickedImage)
+            paintView.setPhoto(photo: pickedImage)
             self.photoImage = pickedImage
         }
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
 }

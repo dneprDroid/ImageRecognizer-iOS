@@ -12,7 +12,7 @@ import UIKit
 
 //debug
 func saveImageToGallery(image: UIImage) {
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),{
+    DispatchQueue.global().async {
         UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
-    })
+    }
 }

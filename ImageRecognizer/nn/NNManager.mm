@@ -4,6 +4,7 @@
 //
 
 #import <vector>
+#import "c_predict_api.h"
 
 #import "NNManager.h"
 
@@ -20,6 +21,12 @@
 //color channels (rgb without alpha)
 #define kDefaultChannels 3
 #define kDefaultImageSize (kDefaultWidth * kDefaultHeight * kDefaultChannels)
+
+@interface NNManager () {
+    PredictorHandle predictor;
+    NSMutableArray *model_synset;
+}
+@end
 
 @implementation NNManager
 

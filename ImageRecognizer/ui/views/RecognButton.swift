@@ -11,7 +11,7 @@ import UIKit
 
 class RecognButton: UIButton {
     
-    var animationDuration: NSTimeInterval = 1
+    var animationDuration: TimeInterval = 1
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -25,31 +25,31 @@ class RecognButton: UIButton {
     
     private func btnSetup() {
         self.backgroundColor = UIColor.blueLight()
-        self.tintColor = UIColor.whiteColor()
+        self.tintColor = .white
         
-        self.layer.borderColor = UIColor.whiteColor().CGColor
+        self.layer.borderColor = UIColor.white.cgColor
         self.layer.borderWidth = 0.8
         self.imageEdgeInsets = UIEdgeInsets(top: 15.0, left: 15.0, bottom: 15.0, right: 15.0)
         self.clipsToBounds = false
         
-        self.userInteractionEnabled = true
+        self.isUserInteractionEnabled = true
     }
     
     func startAnimation() {
-        self.setTitle("Recognition...", forState: .Normal)
+        self.setTitle("Recognition...", for: .normal)
 
-        self.userInteractionEnabled = false
-        UIView.animateKeyframesWithDuration(animationDuration,
-                                            delay: 0,
-                                            options: [.Repeat,  .Autoreverse],
-                                            animations: {
+        self.isUserInteractionEnabled = false
+        UIView.animateKeyframes(withDuration: animationDuration,
+                                delay: 0,
+                                options: [.repeat,  .autoreverse],
+                                animations: {
                                                 
-            UIView.addKeyframeWithRelativeStartTime(0.0,
+            UIView.addKeyframe(withRelativeStartTime: 0.0,
                 relativeDuration: self.animationDuration / 2, animations: {
-                self.backgroundColor = UIColor.cyanColor()
+                self.backgroundColor = UIColor.cyan
             })
             
-            UIView.addKeyframeWithRelativeStartTime(self.animationDuration / 2,
+            UIView.addKeyframe(withRelativeStartTime: self.animationDuration / 2,
                 relativeDuration: self.animationDuration / 2, animations: {
                 self.backgroundColor = UIColor.blueLight()
             })
@@ -58,9 +58,9 @@ class RecognButton: UIButton {
     }
     
     func stopAnimation() {
-        self.setTitle("What is", forState: .Normal)
+        self.setTitle("What is", for: .normal)
         
-        self.userInteractionEnabled = true
+        self.isUserInteractionEnabled = true
         self.layer.removeAllAnimations()
     }
 }

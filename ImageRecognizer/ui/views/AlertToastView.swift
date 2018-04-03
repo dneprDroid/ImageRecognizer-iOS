@@ -28,11 +28,11 @@ class AlertToastView: UILabel {
         }
     }
     
-    override func drawTextInRect(rect: CGRect) {
-        super.drawTextInRect(UIEdgeInsetsInsetRect(rect, insets))
+    override func drawText(in rect: CGRect) {
+        super.drawText(in: UIEdgeInsetsInsetRect(rect, insets))
     }
     
-    override func sizeThatFits(size: CGSize) -> CGSize {
+    override func sizeThatFits(_ size: CGSize) -> CGSize {
         var adjSize = super.sizeThatFits(size)
         adjSize.width += leftInset + rightInset
         adjSize.height += topInset + bottomInset
@@ -40,8 +40,8 @@ class AlertToastView: UILabel {
         return adjSize
     }
     
-    override func intrinsicContentSize() -> CGSize {
-        var contentSize = super.intrinsicContentSize()
+    override var intrinsicContentSize: CGSize {
+        var contentSize = super.intrinsicContentSize
         contentSize.width += leftInset + rightInset
         contentSize.height += topInset + bottomInset
         
@@ -54,20 +54,20 @@ class AlertToastView: UILabel {
         
         label.text = text
         
-        label.textColor = UIColor.whiteColor()
+        label.textColor = UIColor.white
         label.layer.cornerRadius = 10
-        label.layer.backgroundColor = UIColor.blueLight().CGColor
-        label.layer.borderColor = UIColor.blackColor().CGColor
+        label.layer.backgroundColor = UIColor.blueLight().cgColor
+        label.layer.borderColor = UIColor.black.cgColor
         label.layer.borderWidth = 0.8
         
         //shadow
-        label.layer.shadowColor = UIColor.blackColor().CGColor
-        label.layer.shadowOffset = CGSizeMake(4, 4)
+        label.layer.shadowColor = UIColor.black.cgColor
+        label.layer.shadowOffset = CGSize(width: 4, height: 4)
         label.layer.shadowOpacity = 0.5
         label.layer.shadowRadius = 1.0
         
-        label.textAlignment = .Center
-        label.lineBreakMode = .ByWordWrapping
+        label.textAlignment = .center
+        label.lineBreakMode = .byWordWrapping
         label.numberOfLines = 0
         label.insets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         label.frame.size.width =  rootView.frame.width * 0.7
@@ -77,12 +77,12 @@ class AlertToastView: UILabel {
 
         rootView.addSubview(label)
         
-        UIView.animateWithDuration(1, delay: 2.0, options: .CurveLinear, animations: {
+        UIView.animate(withDuration: 1, delay: 2.0, options: .curveLinear, animations: {
             label.layer.opacity = 0
-            }, completion: { completed in
-                if completed {
-                  label.removeFromSuperview()
-                }
+        }, completion: { completed in
+            if completed {
+              label.removeFromSuperview()
+            }
         })
     }
 }

@@ -34,9 +34,9 @@ class PaintView: UIImageView {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.layer.masksToBounds = true
-        let blackColor = UIColor(white: 0.1, alpha: 0.3).CGColor
+        let blackColor = UIColor(white: 0.1, alpha: 0.3).cgColor
         
-        let arrayColors = [UIColor.clearColor().CGColor, blackColor]
+        let arrayColors = [UIColor.clear.cgColor, blackColor]
         
         gradient.colors = arrayColors
         
@@ -44,17 +44,18 @@ class PaintView: UIImageView {
         gradient.locations = [0.88, 1.0]
         gradient.endPoint = CGPoint(x: 0.5, y: 1)
         
-        self.layer.insertSublayer(gradient, atIndex: 0)
+        self.layer.insertSublayer(gradient, at: 0)
     }
     
-    override func layoutSublayersOfLayer(layer: CALayer) {
-        super.layoutSublayersOfLayer(layer)
+    override func layoutSubviews() {
+        super.layoutSubviews()
         gradient.frame = self.bounds
+
     }
     
     func viewInit() {
         self.accessibilityIdentifier = "paintView"//for testing
-        self.contentMode = .ScaleAspectFit
+        self.contentMode = .scaleAspectFit
 
         //fill color
         /*
@@ -69,29 +70,29 @@ class PaintView: UIImageView {
     }
     
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if paintModeIsPhoto() {
             return
         }
         if let touch = touches.first {
-            lastPoint = touch.locationInView(self)
+            lastPoint = touch.location(in: self)
         }
     }
     
-    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         if paintModeIsPhoto() {
             return
         }
         if let touch = touches.first {
-            let currentPoint = touch.locationInView(self)
-            drawLineFrom(lastPoint, toPoint: currentPoint)
+            let currentPoint = touch.location(in: self)
+            drawLineFrom(fromPoint: lastPoint, toPoint: currentPoint)
 
             lastPoint = currentPoint
         }
     }
     
     func setPhoto(photo: UIImage) {
-        setPaintMode(.Photo)
+        setPaintMode(mode: .Photo)
         self.image = photo
     }
     
@@ -115,14 +116,14 @@ class PaintView: UIImageView {
         return self.image
     }
     
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if paintModeIsPhoto() {
             return
         }
 
         UIGraphicsBeginImageContext(self.frame.size)
-        self.image?.drawInRect(CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height), blendMode: .Normal, alpha: 1.0)
-        self.image?.drawInRect(CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height), blendMode: .Normal, alpha: 1)
+        self.image?.draw(in: CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height), blendMode: .normal, alpha: 1.0)
+        self.image?.draw(in: CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height), blendMode: .normal, alpha: 1)
         self.image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
     }
@@ -132,22 +133,21 @@ class PaintView: UIImageView {
         UIGraphicsBeginImageContext(self.frame.size)
         let context = UIGraphicsGetCurrentContext()
 
-        self.image?.drawInRect(CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height))
+        self.image?.draw(in: CGRect(x: 0, y: 0, width: self.frame.size.width, height: self.frame.size.height))
 
         
-        CGContextMoveToPoint(context, fromPoint.x, fromPoint.y)
-        CGContextAddLineToPoint(context, toPoint.x, toPoint.y)
+        context?.move(to: fromPoint)
+        context?.addLine(to: toPoint)
         
-        CGContextSetLineCap(context, .Round)
-        CGContextSetLineWidth(context, brushWidth)
-        CGContextSetRGBStrokeColor(context, brushColor.red, brushColor.green, brushColor.blue, 1.0)
-        CGContextSetBlendMode(context, .Normal)
-        
-        CGContextSetAllowsAntialiasing(context, true)
-        CGContextSetShouldAntialias(context, true)
-        CGContextSetLineJoin(context, .Round)
-        CGContextSetMiterLimit(context, 2.0)
-        CGContextStrokePath(context)
+        context?.setLineCap(.round)
+        context?.setLineWidth(brushWidth)
+        context?.setFillColor(red: brushColor.red, green: brushColor.green, blue: brushColor.blue, alpha: 1.0)
+        context?.setBlendMode(.normal)
+        context?.setAllowsAntialiasing(true)
+        context?.setShouldAntialias(true)
+        context?.setLineJoin(.round)
+        context?.setMiterLimit(2.0)
+        context?.strokePath()
         
         self.image = UIGraphicsGetImageFromCurrentImageContext()
 
