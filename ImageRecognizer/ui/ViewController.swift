@@ -19,7 +19,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         setupToolbar()
         
-        picker = UIImagePickerController()
         picker.delegate = self
         picker.allowsEditing = false
         picker.sourceType = .photoLibrary
