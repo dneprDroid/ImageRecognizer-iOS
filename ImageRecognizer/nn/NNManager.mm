@@ -4,8 +4,6 @@
 //
 
 #import <vector>
-#import "c_predict_api.h"
-
 #import "NNManager.h"
 
 #define pathToResource(path) [[NSBundle mainBundle] pathForResource: path ofType: nil]

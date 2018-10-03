@@ -20,12 +20,13 @@
 		222A1A171E0ED454000ED36D /* ImageRecognizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222A1A161E0ED454000ED36D /* ImageRecognizerTests.swift */; };
 		222A1A221E0ED454000ED36D /* ImageRecognizerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222A1A211E0ED454000ED36D /* ImageRecognizerUITests.swift */; };
 		222A1A3F1E0ED96B000ED36D /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 222A1A3E1E0ED96B000ED36D /* Accelerate.framework */; };
+		22495A322164F7DF00E35170 /* MxNet.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 22495A2F2164F7DF00E35170 /* MxNet.h */; };
+		22495A392164F81900E35170 /* mxnet_predict-all.cc in Sources */ = {isa = PBXBuildFile; fileRef = 22495A372164F81900E35170 /* mxnet_predict-all.cc */; };
 		2262A0731E69CE5200227925 /* test_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 2262A0721E69CE5200227925 /* test_image.png */; };
 		226A73021E118D4500154899 /* UtilMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226A73011E118D4500154899 /* UtilMethods.swift */; };
 		226A73051E118E6100154899 /* RecognButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226A73041E118E6100154899 /* RecognButton.swift */; };
 		2270BFAF1E12B74700F8438A /* UIColor+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2270BFAE1E12B74700F8438A /* UIColor+Utils.swift */; };
 		22EACAD51E12807C005C6EA3 /* AlertToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EACAD41E12807C005C6EA3 /* AlertToastView.swift */; };
-		22EC3DED1E1051BF00C01481 /* mxnet_predict-all.cc in Sources */ = {isa = PBXBuildFile; fileRef = 22EC3DE91E1051BF00C01481 /* mxnet_predict-all.cc */; };
 		22EC3DEE1E1051BF00C01481 /* NNManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 22EC3DEB1E1051BF00C01481 /* NNManager.mm */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,19 @@
 			remoteInfo = ImageRecognizer;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		22495A2B2164F7DF00E35170 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				22495A322164F7DF00E35170 /* MxNet.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		220DA9051E11C5C300998A9C /* params */ = {isa = PBXFileReference; lastKnownFileType = file; path = params; sourceTree = "<group>"; };
@@ -68,13 +82,15 @@
 		222A1A231E0ED454000ED36D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		222A1A3D1E0ED776000ED36D /* ImageRecognizer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ImageRecognizer-Bridging-Header.h"; sourceTree = "<group>"; };
 		222A1A3E1E0ED96B000ED36D /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		22495A2D2164F7DF00E35170 /* libMxNet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMxNet.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		22495A2F2164F7DF00E35170 /* MxNet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MxNet.h; sourceTree = "<group>"; };
+		22495A372164F81900E35170 /* mxnet_predict-all.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "mxnet_predict-all.cc"; sourceTree = "<group>"; };
+		22495A382164F81900E35170 /* c_predict_api.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = c_predict_api.h; sourceTree = "<group>"; };
 		2262A0721E69CE5200227925 /* test_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_image.png; sourceTree = "<group>"; };
 		226A73011E118D4500154899 /* UtilMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilMethods.swift; sourceTree = "<group>"; };
 		226A73041E118E6100154899 /* RecognButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecognButton.swift; sourceTree = "<group>"; };
 		2270BFAE1E12B74700F8438A /* UIColor+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Utils.swift"; sourceTree = "<group>"; };
 		22EACAD41E12807C005C6EA3 /* AlertToastView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertToastView.swift; sourceTree = "<group>"; };
-		22EC3DE71E1051BF00C01481 /* c_predict_api.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = c_predict_api.h; sourceTree = "<group>"; };
-		22EC3DE91E1051BF00C01481 /* mxnet_predict-all.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "mxnet_predict-all.cc"; sourceTree = "<group>"; };
 		22EC3DEA1E1051BF00C01481 /* NNManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNManager.h; sourceTree = "<group>"; };
 		22EC3DEB1E1051BF00C01481 /* NNManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NNManager.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,6 +118,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		22495A2A2164F7DF00E35170 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -123,6 +146,7 @@
 				222A19FD1E0ED454000ED36D /* ImageRecognizer */,
 				222A1A151E0ED454000ED36D /* ImageRecognizerTests */,
 				222A1A201E0ED454000ED36D /* ImageRecognizerUITests */,
+				22495A2E2164F7DF00E35170 /* MxNet */,
 				222A19FC1E0ED454000ED36D /* Products */,
 				222A1A3E1E0ED96B000ED36D /* Accelerate.framework */,
 			);
@@ -134,6 +158,7 @@
 				222A19FB1E0ED454000ED36D /* ImageRecognizer.app */,
 				222A1A121E0ED454000ED36D /* ImageRecognizerTests.xctest */,
 				222A1A1D1E0ED454000ED36D /* ImageRecognizerUITests.xctest */,
+				22495A2D2164F7DF00E35170 /* libMxNet.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -176,18 +201,26 @@
 		222A1A331E0ED4B5000ED36D /* nn */ = {
 			isa = PBXGroup;
 			children = (
-				224B0BB320738D5800408E86 /* mxnet */,
 				22EC3DEA1E1051BF00C01481 /* NNManager.h */,
 				22EC3DEB1E1051BF00C01481 /* NNManager.mm */,
 			);
 			path = nn;
 			sourceTree = "<group>";
 		};
-		224B0BB320738D5800408E86 /* mxnet */ = {
+		22495A2E2164F7DF00E35170 /* MxNet */ = {
 			isa = PBXGroup;
 			children = (
-				22EC3DE71E1051BF00C01481 /* c_predict_api.h */,
-				22EC3DE91E1051BF00C01481 /* mxnet_predict-all.cc */,
+				22495A362164F81900E35170 /* mxnet */,
+				22495A2F2164F7DF00E35170 /* MxNet.h */,
+			);
+			path = MxNet;
+			sourceTree = "<group>";
+		};
+		22495A362164F81900E35170 /* mxnet */ = {
+			isa = PBXGroup;
+			children = (
+				22495A372164F81900E35170 /* mxnet_predict-all.cc */,
+				22495A382164F81900E35170 /* c_predict_api.h */,
 			);
 			path = mxnet;
 			sourceTree = "<group>";
@@ -293,6 +326,23 @@
 			productReference = 222A1A1D1E0ED454000ED36D /* ImageRecognizerUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		22495A2C2164F7DF00E35170 /* MxNet */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22495A352164F7DF00E35170 /* Build configuration list for PBXNativeTarget "MxNet" */;
+			buildPhases = (
+				22495A292164F7DF00E35170 /* Sources */,
+				22495A2A2164F7DF00E35170 /* Frameworks */,
+				22495A2B2164F7DF00E35170 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MxNet;
+			productName = MxNet;
+			productReference = 22495A2D2164F7DF00E35170 /* libMxNet.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -315,6 +365,11 @@
 						CreatedOnToolsVersion = 7.3;
 						TestTargetID = 222A19FA1E0ED454000ED36D;
 					};
+					22495A2C2164F7DF00E35170 = {
+						CreatedOnToolsVersion = 9.3.1;
+						DevelopmentTeam = 38YYV4LCDS;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 222A19F61E0ED454000ED36D /* Build configuration list for PBXProject "ImageRecognizer" */;
@@ -333,6 +388,7 @@
 				222A19FA1E0ED454000ED36D /* ImageRecognizer */,
 				222A1A111E0ED454000ED36D /* ImageRecognizerTests */,
 				222A1A1C1E0ED454000ED36D /* ImageRecognizerUITests */,
+				22495A2C2164F7DF00E35170 /* MxNet */,
 			);
 		};
 /* End PBXProject section */
@@ -380,9 +436,9 @@
 				226A73051E118E6100154899 /* RecognButton.swift in Sources */,
 				2270BFAF1E12B74700F8438A /* UIColor+Utils.swift in Sources */,
 				222A19FF1E0ED454000ED36D /* AppDelegate.swift in Sources */,
+				22495A392164F81900E35170 /* mxnet_predict-all.cc in Sources */,
 				22EC3DEE1E1051BF00C01481 /* NNManager.mm in Sources */,
 				22EACAD51E12807C005C6EA3 /* AlertToastView.swift in Sources */,
-				22EC3DED1E1051BF00C01481 /* mxnet_predict-all.cc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,6 +455,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				222A1A221E0ED454000ED36D /* ImageRecognizerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22495A292164F7DF00E35170 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -622,6 +685,50 @@
 			};
 			name = Release;
 		};
+		22495A332164F7DF00E35170 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 38YYV4LCDS;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		22495A342164F7DF00E35170 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 38YYV4LCDS;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -657,6 +764,15 @@
 			buildConfigurations = (
 				222A1A2D1E0ED454000ED36D /* Debug */,
 				222A1A2E1E0ED454000ED36D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22495A352164F7DF00E35170 /* Build configuration list for PBXNativeTarget "MxNet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22495A332164F7DF00E35170 /* Debug */,
+				22495A342164F7DF00E35170 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

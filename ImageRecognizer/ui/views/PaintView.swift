@@ -15,7 +15,6 @@ class PaintView: UIImageView {
     private var lastPoint = CGPoint.zero
     
     var brushWidth: CGFloat = 5.0
-    var brushColor: (red: CGFloat, green: CGFloat, blue: CGFloat)  = UIColor.blueLight().rgbValues()
     private var paintMode: PaintMode = .Drawing
 
     //bottom gradient
@@ -85,7 +84,7 @@ class PaintView: UIImageView {
         }
         if let touch = touches.first {
             let currentPoint = touch.location(in: self)
-            drawLineFrom(fromPoint: lastPoint, toPoint: currentPoint)
+            drawLine(fromPoint: lastPoint, toPoint: currentPoint)
 
             lastPoint = currentPoint
         }
@@ -128,7 +127,7 @@ class PaintView: UIImageView {
         UIGraphicsEndImageContext()
     }
     
-    private func drawLineFrom(fromPoint: CGPoint, toPoint: CGPoint) {
+    private func drawLine(fromPoint: CGPoint, toPoint: CGPoint) {
         
         UIGraphicsBeginImageContext(self.frame.size)
         let context = UIGraphicsGetCurrentContext()
@@ -141,7 +140,8 @@ class PaintView: UIImageView {
         
         context?.setLineCap(.round)
         context?.setLineWidth(brushWidth)
-        context?.setFillColor(red: brushColor.red, green: brushColor.green, blue: brushColor.blue, alpha: 1.0)
+        context?.setFillColor(UIColor.blueLight().cgColor)
+        context?.setStrokeColor(UIColor.blueLight().cgColor)
         context?.setBlendMode(.normal)
         context?.setAllowsAntialiasing(true)
         context?.setShouldAntialias(true)
