@@ -101,8 +101,8 @@
      
         CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
         
-        uint8_t *imageData = new uint8_t[numForRendering];
-        CGContextRef contextRef = CGBitmapContextCreate(imageData,
+        std::vector<uint8_t> imageData(numForRendering);
+        CGContextRef contextRef = CGBitmapContextCreate(imageData.data(),
                                                         kDefaultWidth,
                                                         kDefaultHeight,
                                                         8,
@@ -114,7 +114,7 @@
         CGColorSpaceRelease(colorSpace);
         
         // Subtract the mean and copy to the input buffer
-        float *inputBuffer = new float[numForComputing];
+        std::vector<float> inputBuffer(numForComputing);
         
         for (int i = 0; i < numForRendering; i += 4) {
             int j = i / 4;
@@ -125,11 +125,8 @@
         
         mx_uint *shape = nil;
         mx_uint shapeLen = 0;
-        MXPredSetInput(predictor, "data", inputBuffer, numForComputing);
+        MXPredSetInput(predictor, "data", inputBuffer.data(), numForComputing);
         MXPredForward(predictor);
-        
-        delete[] inputBuffer;
-        delete[] imageData;
         
         MXPredGetOutputShape(predictor, 0, &shape, &shapeLen);
         
@@ -169,7 +166,7 @@
         [meanData getBytes:modelMean length:[meanData length]];
         
         std::vector<uint8_t> meanWithAlpha(kDefaultWidth * kDefaultHeight * (kDefaultChannels + 1), 0);
-        float *pMean[3] = {
+        const float *pMean[3] = {
             modelMean + kDefaultWidth * kDefaultHeight * 0,
             modelMean + kDefaultWidth * kDefaultHeight * 1,
             modelMean + kDefaultWidth * kDefaultHeight * 2
